@@ -1,0 +1,1246 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;800&display=swap");
+$primary: #fb5001;
+$secondary: #5b5b5b;
+$lightColor: #ffede4;
+$commonShadow: 0 7px 20px -10px #bdbdbd;
+$btnpadding: 5px 20px;
+$darkColor: #222;
+$smooth: 0.4s ease-in-out;
+$white: #fff;
+$image3d: 0 5px 20px -10px #777;
+
+@font-face {
+  font-family: headingfont;
+  src: url(./headingfont.otf);
+}
+body {
+  background: $lightColor;
+  h2 {
+    color: $primary;
+    font-family: headingfont;
+    position: relative;
+  }
+  ul,
+  li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+.deskHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px 40px;
+  background: $white;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 5px 10px -5px #ddd;
+
+  .logo img {
+    width: 50%;
+    height: 50%;
+    transform: translateX(-20px);
+  }
+
+  .headerBtns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    a.buysell {
+      color: $primary;
+      background: $white;
+      border-radius: 10px;
+      height: 40px;
+      border: 1px solid $lightColor;
+      font-size: 16px;
+      position: relative;
+      width: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: $smooth;
+
+      &:hover {
+        color: #fff;
+        background: $primary;
+        svg {
+          color: #fff;
+        }
+      }
+
+      svg {
+        color: $primary;
+        font-size: 20px;
+      }
+    }
+    a {
+      height: 40px;
+      width: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #fff;
+      font-size: 25px;
+      border-radius: 10px;
+      border: 1px solid #14c047;
+      color: #14c047;
+      transition: $smooth;
+
+      &:hover {
+        color: #fff;
+        background: #14c047;
+      }
+    }
+  }
+  .loginBtn {
+    button {
+      background: $primary;
+      color: $white;
+      font-weight: 600;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      height: 45px;
+      width: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+  }
+}
+section.hero {
+  padding: 20px;
+}
+.centerit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.categoryCard {
+  padding: 0px;
+  margin: 10px 0;
+  text-align: center;
+  a {
+    text-align: center;
+    img {
+      border-radius: 10px;
+      transition: $smooth;
+      padding: 5px;
+      border: 1px solid #ddd;
+    }
+    span {
+      font-size: 15px;
+      font-weight: 500;
+      color: $darkColor;
+      transition: $smooth;
+      margin-top: 10px;
+      display: block;
+    }
+    &:hover {
+      img {
+        transform: scale(1.02) translateY(-2px);
+        box-shadow: $image3d;
+      }
+      span {
+        text-decoration: underline;
+        text-underline-offset: 8px;
+        text-decoration-color: $primary;
+      }
+    }
+  }
+}
+
+section.commonSection {
+  background: $white;
+  margin: 20px;
+  padding: 20px 10px;
+  border-radius: 20px;
+  border: 1px solid #eee;
+  box-shadow: 0 5px 10px -5px #ddd;
+}
+.commonBtn {
+  background: $primary;
+  color: $white;
+  font-weight: 600;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: none;
+  outline: 2px solid #0000;
+  outline-offset: -5px;
+  padding: 7px 15px;
+  transition: $smooth;
+  &:hover {
+    color: $primary;
+    background: $white;
+    outline: 2px solid $primary;
+    outline-offset: 2px;
+  }
+}
+.centerHeading {
+  text-align: center;
+  width: 100%;
+}
+.loginForm {
+  width: 100%;
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    flex-direction: column;
+    background: $white;
+    padding: 20px;
+    gap: 20px;
+    input {
+      width: 100%;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 10px;
+      padding-left: 20px;
+      transition: $smooth;
+      outline: none;
+    }
+    input:focus {
+      border: 1px solid $primary;
+    }
+  }
+}
+section.loginSection {
+  height: 100vh;
+  background: $lightColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.statsCard {
+  position: relative;
+  background: $lightColor;
+  border-radius: 20px;
+  box-shadow: 0 7px 10px -5px #ddd;
+  padding: 20px;
+
+  svg {
+    position: absolute;
+    font-size: 30px;
+    top: 10px;
+    right: 10px;
+    border-radius: 10px;
+    transition: 0.4s ease-in-out;
+    color: $primary;
+  }
+}
+
+section.adminPanel {
+  margin: 20px;
+  padding: 20px;
+}
+.statsTable {
+  padding: 20px;
+  background: $white;
+  border-radius: 20px;
+  border: 1px solid #eee;
+  table {
+    background: #f7f8ff;
+    border-radius: 10px;
+    width: 100%;
+    overflow: hidden;
+
+    thead {
+      th {
+        background: $primary !important;
+        color: $white;
+        padding: 5px;
+      }
+      th:not(:last-child) {
+        border-right: 2px solid #eee;
+      }
+    }
+    tbody {
+      tr:nth-child(odd) {
+        background: lightyellow;
+      }
+      tr {
+        td {
+          padding: 5px;
+        }
+      }
+    }
+  }
+}
+a.viewBtn,
+a.deleteBtn,
+button.viewBtn,
+button.deleteBtn {
+  border: 1px dashed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  width: 40px;
+  height: 40px;
+  border-radius: 7px;
+  background: transparent;
+}
+
+a.viewBtn {
+  color: $primary;
+}
+a.deleteBtn,
+button.deleteBtn {
+  transition: $smooth;
+  color: #ff4a4a;
+
+  &:hover {
+    border: 1px solid #ff4a4a;
+    background: #ff4a4a;
+    color: $white;
+  }
+}
+.spcbtwn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: $primary;
+    font-size: 20px;
+  }
+}
+a.viewAll {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px 5px;
+  gap: 10px;
+  border-radius: 10px;
+  border: 1px dashed $primary;
+  color: $primary;
+  position: relative;
+}
+a.actionBtn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 10px;
+  gap: 10px;
+  border-radius: 10px;
+  outline: 1px dashed $primary;
+  color: $primary;
+  position: relative;
+  transition: $smooth;
+
+  svg {
+    border-radius: 5px;
+    font-size: 30px;
+    padding: 5px;
+    background: transparent;
+    color: $primary;
+    transition: $smooth;
+  }
+  :hover {
+    background: $primary;
+  }
+}
+a.actionBtn:hover {
+  svg {
+    background: $primary;
+    color: $white;
+  }
+  background: #f7f8ff;
+  outline: 1px solid $primary;
+  outline-offset: 3px;
+}
+section.productBread {
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 2px;
+  padding: 5px 20px;
+  width: calc(100% - 40px);
+  margin: 20px auto 0 auto;
+  border-radius: 20px;
+  h3 {
+    color: black;
+    transition: $smooth;
+  }
+  ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+  }
+  ul li {
+    position: static;
+    margin-bottom: 5px;
+
+    a {
+      color: #444;
+      &:hover {
+        color: $primary;
+        text-decoration: underline;
+        text-underline-offset: 5px;
+      }
+    }
+  }
+  ul li:not(:last-child) {
+    position: relative;
+    ::before {
+      position: absolute;
+      content: "❯";
+      height: 10px;
+      width: 10px;
+      top: 0;
+      right: -15px;
+      color: $secondary;
+    }
+  }
+}
+.productAboutSlider {
+  border-radius: 20px;
+}
+.productSlides {
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.paddingCommon {
+  padding: 20px;
+}
+.productPage {
+  h1 {
+    color: #222;
+    position: relative;
+    font-size: 32px;
+    font-family: headingfont;
+
+    &::before {
+      position: absolute;
+      content: "";
+      bottom: -4px;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: $primary;
+    }
+  }
+}
+section.ligtbgSection {
+  padding: 20px;
+  margin: 20px;
+  position: relative;
+  border-radius: 0 20px 20px 20px;
+  background: #fff;
+}
+
+.featureBox {
+  padding: 20px;
+  border-radius: 20px;
+  background: $lightColor;
+
+  table {
+    background: white;
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+
+    tr {
+      border-bottom: 1px solid #eee;
+      th {
+        padding: 10px;
+        padding-left: 15px;
+        width: 20%;
+      }
+      td {
+        border-left: 1px solid #eee;
+        padding: 10px;
+        padding-left: 15px;
+        width: 80%;
+      }
+    }
+  }
+}
+.indsutryCard {
+  width: 100%;
+  background: #8acdff05;
+  transition: $smooth;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px dashed $lightColor;
+  text-align: center;
+  margin-bottom: 20px;
+
+  img {
+    width: 100px;
+    height: 100px;
+    margin-top: -50px;
+    border-radius: 10px;
+    transition: $smooth;
+  }
+
+  &:hover {
+    border: 2px solid $primary;
+    img {
+      transform: translateY(10px);
+    }
+  }
+}
+.mainfooter {
+  background: $white;
+  padding: 20px;
+}
+.bottomfooter {
+  color: $white;
+  background: $primary;
+  padding: 10px;
+  text-align: center;
+}
+.footerAbout {
+  padding: 10px;
+  background: $lightColor;
+  border-radius: 20px;
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    li {
+      a {
+        transition: $smooth;
+        font-size: 30px;
+        outline: 2px solid transparent;
+        color: $primary;
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+          outline-offset: 3px;
+          outline: 2px dashed $primary;
+        }
+      }
+    }
+  }
+}
+
+h5.footerHeading {
+  color: $darkColor;
+  font-weight: 700;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    bottom: -5px;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: $primary;
+  }
+}
+.footerLinks {
+  a {
+    color: $darkColor;
+    transition: $smooth;
+    position: relative;
+    display: block;
+    &:hover {
+      letter-spacing: 2px;
+      transform: translateX(10px);
+    }
+    &::before {
+      position: absolute;
+      content: "〉";
+      top: 0;
+      left: -15px;
+      width: 0;
+      font-weight: 900;
+      height: 0;
+      background: $primary;
+      opacity: 0;
+      transition: $smooth;
+    }
+
+    &:hover::before {
+      width: 100%;
+      opacity: 1;
+      left: -10px;
+    }
+  }
+}
+.reachUs {
+  a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    transition: $smooth;
+    color: $darkColor;
+    gap: 10px;
+
+    svg {
+      font-size: 20px;
+      color: $primary;
+    }
+  }
+}
+.productCard {
+  padding: 10px;
+  transition: $smooth;
+  border: 1px solid #eee;
+  border-radius: 20px;
+  background: $white;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+
+  &:hover .productImg img {
+    transform: scale(1.2) rotate(2deg);
+    transform-origin: bottom;
+  }
+
+  .productImg {
+    overflow: hidden;
+    border-radius: 10px;
+
+    img {
+      width: 100%;
+      transition: $smooth;
+      height: 100%;
+    }
+  }
+}
+.productContent {
+  a {
+    h3 {
+      color: $darkColor;
+      transition: $smooth;
+      margin: 10px 0;
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+}
+a.viewMore {
+  background: #fff;
+  color: $primary;
+  padding: 7px 15px;
+  border: 1px solid $primary;
+  border-radius: 10px;
+  transition: $smooth;
+  display: flex;
+  width: max-content;
+  align-items: center;
+
+  svg {
+    height: 25px;
+    width: 25px;
+    transition: $smooth;
+  }
+  &:hover {
+    color: $white;
+    background: $primary;
+  }
+  &:hover svg {
+    height: 25px;
+    width: 25px;
+    transition: $smooth;
+    border-radius: 5px;
+    color: $primary;
+    margin-left: 5px;
+    background: $white;
+  }
+}
+
+.relatedproductslider {
+  .swiper-button-prev,
+  .swiper-button-next {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fb5001;
+    border-radius: 10px;
+  }
+  .swiper-button-prev:after,
+  .swiper-button-next:after {
+    font-size: 25px;
+    color: $white;
+  }
+}
+h2.attachedHeading {
+  position: absolute;
+  background: #fff;
+  padding: 5px 10px;
+  border-radius: 10px 10px 0 0;
+  bottom: 98%;
+  margin: 0;
+  left: 0;
+}
+
+.mt-section {
+  margin-top: 72px !important;
+}
+.inputGroup {
+  position: relative;
+  width: 100%;
+}
+
+.createInput {
+  border: solid 1px #eee;
+  border-radius: 1rem;
+  background: none;
+  padding: 1rem;
+  font-size: 1rem;
+  color: $darkColor;
+  transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+}
+
+.user-label {
+  position: absolute;
+  left: 15px;
+  color: #444;
+  pointer-events: none;
+  transform: translateY(1rem);
+  transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.createInput:focus,
+.createInput:valid {
+  outline: none;
+  border: 1px solid $primary;
+}
+
+.createInput:focus ~ label,
+.createInput:valid ~ label {
+  transform: translateY(-50%) scale(0.8);
+  background-color: $white;
+  padding: 0 0.2em;
+  color: $primary;
+}
+.react-tabs__tab-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  border-bottom: none !important;
+  flex-direction: column;
+}
+.react-tabs__tab {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+  background: $lightColor;
+  color: $primary;
+  transition: $smooth;
+  border-radius: 10px;
+  width: 100%;
+  padding: 10px !important;
+
+  svg {
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+    border-radius: 5px;
+    background: $lightColor;
+  }
+}
+.react-tabs__tab--selected {
+  border: none !important;
+  background: $primary !important;
+  border-radius: 10px !important;
+  transform: scale(1.05) !important;
+  box-shadow: 0px 7px 20px -15px $primary;
+  color: $lightColor !important;
+
+  svg {
+    background: $white;
+    color: $primary;
+  }
+  &::after {
+    opacity: 0;
+  }
+}
+.tabContent {
+  height: 100%;
+  background: $lightColor;
+  padding: 10px;
+  border-radius: 20px;
+}
+.tabForm {
+  background: $white;
+  border-radius: 20px;
+  height: 100%;
+  padding: 20px 10px;
+}
+
+section.createSection {
+  padding: 20px;
+  margin: 20px;
+}
+.cardIndustry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  background: transparent;
+  padding: 5px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  width: 100%;
+}
+.industrySelect {
+  label {
+    position: relative;
+    width: 100%;
+
+    input {
+      position: absolute;
+      accent-color: #fb5001;
+      width: 15px;
+      height: 15px;
+      top: -5px;
+      right: -5px;
+      background: $white;
+    }
+  }
+}
+.gap-10 {
+  gap: 10px;
+}
+.searchBar form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  input {
+    height: 45px;
+    width: 300px;
+    outline: none;
+    border: 2px solid $lightColor;
+    border-radius: 10px;
+    padding-left: 15px;
+    transition: $smooth;
+  }
+  input:focus {
+    background: $lightColor;
+  }
+  button {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    right: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    background: $primary;
+    color: $white;
+  }
+}
+section.centerForm {
+  height: 100vh;
+  background: $lightColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.formSmall {
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: $commonShadow;
+  background: $white;
+
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+button.addMore {
+  background: $white;
+  color: #fb5001;
+  outline: none;
+  border: 1px dashed #fb5001;
+  border-radius: 10px;
+  height: 40px;
+  width: 40px;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pointList {
+  word-wrap: break-word;
+  list-style: numeric;
+}
+ul.pointList li {
+  list-style: numeric !important;
+}
+.lsn {
+  list-style: numeric !important;
+}
+.commonBtn:disabled {
+  background: #777;
+  color: $white;
+}
+.searchBar {
+  position: relative;
+}
+.searchList {
+  position: absolute;
+  top: calc(100% + 20px);
+  height: 200px;
+  background: $lightColor;
+  width: 400px;
+  padding: 10px;
+  z-index: 111;
+  border-radius: 10px;
+  box-shadow: $commonShadow;
+  left: 5px;
+
+  ul {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow: hidden;
+    height: 100%;
+    overflow-y: scroll;
+    padding-right: 10px;
+
+    &::-webkit-scrollbar {
+      background: $white;
+      width: 5px;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background: $primary;
+    }
+
+    gap: 10px;
+    flex-direction: column;
+    li {
+      width: 100%;
+    }
+  }
+
+  a {
+    display: block;
+    .searchLink {
+      padding: 10px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 10px;
+      background: $white;
+      border-radius: 7px;
+    }
+  }
+}
+span.categoryBadge {
+  background: $primary;
+  padding: 3px;
+  font-size: 12px;
+  color: $white;
+  border-radius: 5px;
+}
+.commonBox {
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: $commonShadow;
+  height: 100%;
+  background: $white;
+  position: relative;
+}
+button.username {
+  background: transparent;
+  color: #fb5001;
+  border: 2px solid #ffede4;
+  font-weight: 600;
+  outline: none;
+  height: 40px;
+  width: calc(100% + 20px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+}
+.clientInfoList {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  flex-direction: column;
+
+  li {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+
+    svg {
+      color: $primary;
+    }
+  }
+}
+.plainSection {
+  padding: 40px;
+  background: $lightColor;
+}
+.bannerCard {
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: $commonShadow;
+  background: $white;
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: $image3d;
+  }
+}
+.userView {
+  position: relative;
+  .userminiPanel {
+    position: absolute;
+    animation: slide-in-fwd-top 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    height: auto;
+    width: 300px;
+    background: $white;
+    padding: 20px;
+    border-radius: 20px;
+    top: calc(100% + 20px);
+    right: 0;
+    border: 1px solid #eee;
+    box-shadow: $commonShadow;
+    z-index: 111;
+
+    ul {
+      li {
+        a,
+        button {
+          color: $darkColor;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          margin: 20px 0;
+          background: #0000;
+          padding: 2px 0;
+          border: none;
+          gap: 10px;
+          svg {
+            color: $primary;
+            font-size: 25px;
+            padding: 2px;
+            background: $lightColor;
+            border-radius: 5px;
+            transition: $smooth;
+          }
+
+          &:hover svg {
+            color: $lightColor;
+            background: $primary;
+            transform: scale(1.05);
+          }
+        }
+      }
+    }
+  }
+}
+@keyframes slide-in-fwd-top {
+  0% {
+    -webkit-transform: translateZ(-1400px) translateY(-800px);
+    transform: translateZ(-1400px) translateY(-800px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateY(0);
+    transform: translateZ(0) translateY(0);
+    opacity: 1;
+  }
+}
+button.whiteBtn {
+  background: $white;
+  color: #fb5001;
+  font-weight: 600;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 50px;
+  border: 1px solid #eee;
+  padding: 0 10px;
+
+  svg {
+    height: 25px;
+    width: 25px;
+    border-radius: 5px;
+    background: #fff;
+    color: $primary;
+  }
+  &:hover {
+    color: #fff;
+    background: $primary;
+  }
+}
+.gap20 {
+  gap: 20px;
+}
+.indsutryCard h5 {
+  margin-top: 10px;
+}
+.circleUser svg {
+  color: #fff;
+  background: #fb5001;
+  width: 35px;
+  height: 35px;
+  border-radius: 8px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.contact {
+  h6 {
+    color: $darkColor;
+  }
+}
+
+.homeSlides {
+}
+span.searchName {
+  text-transform: lowercase;
+  color: $primary;
+}
+
+.w300 {
+  width: 300px;
+}
+.aboutHome {
+  height: 100%;
+  padding: 20px;
+  background: #fff;
+  border-radius: 20px;
+}
+a.buysell {
+  color: $primary;
+  background: #fff;
+  border-radius: 10px;
+  height: 40px;
+  border: 1px solid $primary;
+  font-size: 16px;
+  position: relative;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: 0.4s ease-in-out;
+}
+a.whatsapp {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  font-size: 25px;
+  border-radius: 10px;
+  border: 1px solid #14c047;
+  color: #14c047;
+  transition: 0.4s ease-in-out;
+}
+a.viewBtn:hover {
+  background: $primary;
+  color: #fff;
+  border: 1px solid $primary;
+}
+.footerAbout img {
+  padding: 5px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  width: 50%;
+  height: 50%;
+  background: #fff;
+}
+.swiper-pagination-bullet {
+  background: $primary;
+}
+.textLink {
+  color: $darkColor;
+  transition: $smooth;
+  text-decoration: underline;
+  text-decoration-color: #0000;
+
+  &:hover {
+    text-decoration-color: $primary;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
+  }
+}
+.otpBox {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 0;
+  margin-bottom: -20px;
+}
+.otpBox input {
+  width: 60%;
+  height: 40px;
+}
+.otpBox button {
+  width: 40%;
+  height: 40px;
+}
+button.username svg {
+  color: #fff;
+  background: #fb5001;
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+  padding: 5px;
+}
+.tabLinks {
+  padding: 10px;
+}
+.categoriesGrid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
