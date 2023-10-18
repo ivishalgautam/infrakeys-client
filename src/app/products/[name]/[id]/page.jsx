@@ -18,17 +18,20 @@ export async function generateMetadata({ params: { id } }) {
       return {
         title: "Not Found!",
         description: "The page you you looking for does not exist!",
+        keywords: "Not found",
       };
     }
     return {
       title: data.title,
       description: data.about,
+      keywords: data.keywords,
     };
   } catch (error) {
     console.log(error);
     return {
       title: "Not Found!",
       description: "The page you you looking for does not exist!",
+      keywords: "Not found",
     };
   }
 }
