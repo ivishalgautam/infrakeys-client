@@ -23,6 +23,7 @@ export default function Page() {
     featureTitle: "",
     featureDesc: "",
     applicationText: "",
+    keywords: "",
   });
   const [productId, setProductId] = useState(null);
   const [addInput, setAddInput] = useState([{ id: uuidv4(), singleInput: "" }]);

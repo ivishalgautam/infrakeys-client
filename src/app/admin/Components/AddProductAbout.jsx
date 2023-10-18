@@ -31,6 +31,7 @@ export default function AddProductAbout({
     formData.append("title", inputs.title);
     formData.append("sub_category_id", inputs.sub_category_id);
     formData.append("about", inputs.about);
+    formData.append("keywords", inputs.keywords);
 
     try {
       const resp = await publicRequest.post("/products", formData, {
@@ -164,6 +165,27 @@ export default function AddProductAbout({
               }
             />
             <label className="user-label">About Description</label>
+          </div>
+        </div>
+
+        {/* keywords */}
+        <div className="col-12 mt-3">
+          <div className="inputGroup">
+            <textarea
+              required
+              type="text"
+              name="keywords"
+              autoComplete="off"
+              className="createInput"
+              rows="5"
+              onChange={(e) =>
+                setInputs((prev) => ({
+                  ...prev,
+                  [e.target.name]: e.target.value,
+                }))
+              }
+            />
+            <label className="user-label">Keywords</label>
           </div>
         </div>
 
