@@ -2,16 +2,12 @@
 import React, { useState } from "react";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import { MdOutlineFactory, MdOutlineFeaturedPlayList } from "react-icons/md";
-import { TbBrandAppleArcade } from "react-icons/tb";
-import { BiBookContent } from "react-icons/bi";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import { v4 as uuidv4 } from "uuid";
-import AddDesc from "../../Components/AddDesc";
 import AddProductAbout from "../../Components/AddProductAbout";
 import AddFeatures from "../../Components/AddFeatures";
 import AddUsedby from "../../Components/AddUsedby";
-import AddApplications from "../../Components/AddApplications";
 
 export default function Page() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -26,13 +22,6 @@ export default function Page() {
     keywords: "",
   });
   const [productId, setProductId] = useState(null);
-  const [addInput, setAddInput] = useState([{ id: uuidv4(), singleInput: "" }]);
-  const handleAddInput = () => {
-    setAddInput([...addInput, { id: uuidv4(), singleInput: "" }]);
-  };
-  const handleDeleteInput = (index) => {
-    setAddInput((prev) => prev.filter((item) => item.id !== index));
-  };
 
   return (
     <>

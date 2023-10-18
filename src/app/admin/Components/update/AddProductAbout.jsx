@@ -11,7 +11,7 @@ export default function AddProductAbout({
   inputs,
   setInputs,
 }) {
-  console.log(inputs.images);
+  // console.log(inputs.images);
   const [subCategories, setSubCategories] = useState([]);
   const [images, setImages] = useState([]);
 
@@ -34,6 +34,7 @@ export default function AddProductAbout({
     formData.append("sub_category_id", inputs.sub_category_id);
     formData.append("about", inputs.about);
     formData.append("images", JSON.stringify(inputs.images));
+    formData.append("keywords", inputs.keywords);
 
     try {
       const resp = await publicRequest.put(`/products/${productId}`, formData, {
@@ -80,6 +81,8 @@ export default function AddProductAbout({
           title: resp.data.title,
           about: resp.data.about,
           images: resp.data.images,
+          sub_category_id: resp.data.sub_category_id,
+          keywords: resp.data.keywords,
         }));
       }
 
@@ -100,7 +103,7 @@ export default function AddProductAbout({
               name="title"
               autoComplete="off"
               className="createInput"
-              value={inputs.title}
+              value={inputs?.title}
               onChange={(e) =>
                 setInputs((prev) => ({
                   ...prev,
@@ -119,6 +122,7 @@ export default function AddProductAbout({
               name="sub_category_id"
               autoComplete="off"
               className="createInput"
+              value={inputs?.sub_category_id}
               onChange={(e) =>
                 setInputs((prev) => ({
                   ...prev,
@@ -173,6 +177,28 @@ export default function AddProductAbout({
               }
             />
             <label className="user-label">About Description</label>
+          </div>
+        </div>
+
+        {/* keywords */}
+        <div className="col-12 mt-3">
+          <div className="inputGroup">
+            <textarea
+              required
+              type="text"
+              name="keywords"
+              autoComplete="off"
+              className="createInput"
+              rows="5"
+              value={inputs.keywords}
+              onChange={(e) =>
+                setInputs((prev) => ({
+                  ...prev,
+                  [e.target.name]: e.target.value,
+                }))
+              }
+            />
+            <label className="user-label">Keywords</label>
           </div>
         </div>
 
