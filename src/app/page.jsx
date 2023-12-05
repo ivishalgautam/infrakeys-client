@@ -1,5 +1,6 @@
 import CategoriesHome from "@/components/CategoriesHome";
 import Hero from "@/components/Hero";
+import Head from "next/head";
 import Script from "next/script";
 import React from "react";
 
@@ -20,7 +21,12 @@ export default function Page() {
 
   gtag('config', 'G-5W81C4E1WN');`}
       </Script>
-
+      <Head>
+        <meta
+          name="google-site-verification"
+          content="kWcwy0Kag9MmpnCSMcrOL7VuQT5ZKjuBbZ6218QCpZw"
+        />
+      </Head>
       <Hero />
       <CategoriesHome />
     </>
