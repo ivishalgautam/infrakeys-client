@@ -10,6 +10,10 @@ export const metadata = {
 export default function Page() {
   return (
     <>
+      <meta
+        name="google-site-verification"
+        content="kWcwy0Kag9MmpnCSMcrOL7VuQT5ZKjuBbZ6218QCpZw"
+      />
       <Script
         async
         src="https://www.googletagmanager.com/gtag/js?id=G-5W81C4E1WN"
