@@ -4,6 +4,7 @@ import BlogCard from "@/components/BlogCard";
 import { publicRequest } from "@/libs/requestMethods";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import CenterHeading from "./CenterHeading";
 
 export default function Blogs() {
   const [blogs, setBlogs] = useState([]);
@@ -33,13 +34,14 @@ export default function Blogs() {
   }, []);
   return (
     <section className="plainSection">
+      <CenterHeading heading="Blogs" />
       <div className="container-fluid">
-        {blogs?.length < 1 ? (
+        {blogs?.length !== 0 && blogs?.length < 1 ? (
           <h1 className="text-center">Add new blog</h1>
         ) : (
           <div className="row">
-            {blogs?.map((blog) => (
-              <div className="col-lg-4 col-sm-6">
+            {blogs?.splice(0, 3).map((blog) => (
+              <div className="col-lg-3 col-sm-6">
                 <BlogCard
                   blog={blog}
                   key={blog.id}

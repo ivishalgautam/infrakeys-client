@@ -1,14 +1,16 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import CenterHeading from "../CenterHeading";
 import { MdDeleteOutline } from "react-icons/md";
 import Editor from "../Editor";
+import { publicRequest } from "@/libs/requestMethods";
 
 const BlogForm = ({
   formData,
   handleOnChange,
   handleFormSubmit,
+  handleUpdate,
   categories,
   setFile,
   setTags,
@@ -16,9 +18,39 @@ const BlogForm = ({
   setContent,
   type,
   tags,
+  slug,
+  content,
+  uploadFile,
 }) => {
+  async function getBlogBySlug(slug) {
+    try {
+      const { data } = await publicRequest.get(`/blogs/${slug}`);
+      for (const [key, value] of Object.entries(data)) {
+        if (key in formData) {
+          setFormData((prev) => ({ ...prev, [key]: value }));
+        }
+      }
+      setContent(data.content);
+      setTags(data.tags);
+      // console.log(blog.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  const handleFileChange = (e) => {
+    console.log({ file: e.target.files[0] });
+    type === "edit" ? uploadFile(e.target.files[0]) : setFile(e.target.files);
+  };
+
+  useEffect(() => {
+    if (slug && type === "edit") {
+      getBlogBySlug(slug);
+    }
+  }, [slug]);
+
   return (
-    <form onSubmit={handleFormSubmit}>
+    <form onSubmit={type === "edit" && slug ? handleUpdate : handleFormSubmit}>
       <CenterHeading heading="Create blog" />
       <div style={{ display: "grid", gap: "1rem", marginTop: "1rem" }}>
         {/* title */}
@@ -94,7 +126,7 @@ const BlogForm = ({
             className="createInput"
             type="file"
             name="text"
-            onChange={(e) => setFile(e.target.files)}
+            onChange={(e) => handleFileChange(e)}
           />
         </div>
 
@@ -163,7 +195,7 @@ const BlogForm = ({
         {/* content */}
         <div className="inputGroup">
           <h3>Content</h3>
-          <Editor setContent={setContent} />
+          <Editor setContent={setContent} type="edit" content={content} />
         </div>
         <button className="commonBtn">Create Blog</button>
       </div>

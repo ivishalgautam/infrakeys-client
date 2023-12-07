@@ -1,3 +1,4 @@
+import Blogs from "@/components/Blogs";
 import CategoriesHome from "@/components/CategoriesHome";
 import Hero from "@/components/Hero";
 import Head from "next/head";
@@ -76,6 +77,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       {/* <!-- End Google Tag Manager --> */}
       <Hero />
       <CategoriesHome />
+      <Blogs />
       {/* Google Tag Manager (noscript)  */}
       <noscript>
         <iframe

@@ -3,11 +3,12 @@ import React from "react";
 
 import { Editor } from "@tinymce/tinymce-react";
 
-export default function MyEditor({ setContent }) {
+export default function MyEditor({ setContent, type, content }) {
   return (
     <>
       <Editor
         // onInit={(evt, editor) => setContent(editor.getContent())}
+        initialValue={type === "edit" && content}
         onChange={(e) => setContent(e.lastLevel.content)}
         init={{
           height: 500,

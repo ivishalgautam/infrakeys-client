@@ -1273,3 +1273,34 @@ button.username svg {
     }
   }
 }
+
+.blogs-container{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1rem;
+}
+
+.blog-card{
+  height: 100%;
+  overflow: hidden;
+  border-radius: 1rem;
+  background-color: #fff;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.image-container {
+
+  width: 100%;
+
+  > div {
+    position: unset !important;
+  }
+
+  .image {
+    object-fit: contain;
+    width: 100% !important;
+    position: relative !important;
+    height: unset !important;
+  }
+}
