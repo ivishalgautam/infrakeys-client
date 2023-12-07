@@ -1,50 +1,69 @@
 "use client";
-import React from "react";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
+import React, { useRef } from "react";
 
-const modules = {
-  toolbar: [
-    [{ header: [1, 2, false] }],
-    ["bold", "italic", "underline", "strike", "blockquote"],
-    [
-      { list: "ordered" },
-      { list: "bullet" },
-      { indent: "-1" },
-      { indent: "+1" },
-    ],
-    ["link", "image"],
-    ["clean"],
-  ],
-};
+import { Editor } from "@tinymce/tinymce-react";
 
-const formats = [
-  "header",
-  "bold",
-  "italic",
-  "underline",
-  "strike",
-  "blockquote",
-  "list",
-  "bullet",
-  "indent",
-  "link",
-  "image",
-];
+export default function MyEditor({ setContent }) {
+  const editorRef = useRef(null);
 
-const Editor = ({ setContent }) => {
+  const log = () => {
+    if (editorRef.current) {
+      // console.log(editorRef.current.getContent());
+      setContent(editorRef.current.getContent());
+    }
+  };
+
   return (
     <>
-      <ReactQuill
-        theme="snow"
-        name="content"
-        // value={formData.content}
-        onChange={(e) => setContent(e)}
-        modules={modules}
-        formats={formats}
+      <Editor
+        onInit={(evt, editor) => (editorRef.current = editor)}
+        initialValue="<p>This is the initial content of the editor.</p>"
+        init={{
+          height: 500,
+
+          menubar: false,
+
+          plugins: [
+            "a11ychecker",
+            "advlist",
+            "advcode",
+            "advtable",
+            "autolink",
+            "checklist",
+            "export",
+
+            "lists",
+            "link",
+            "image",
+            "charmap",
+            "preview",
+            "anchor",
+            "searchreplace",
+            "visualblocks",
+
+            "powerpaste",
+            "fullscreen",
+            "formatpainter",
+            "insertdatetime",
+            "media",
+            "table",
+            "help",
+            "wordcount",
+          ],
+
+          toolbar:
+            "undo redo | casechange blocks | bold italic backcolor | " +
+            "alignleft aligncenter alignright alignjustify | " +
+            "bullist numlist checklist outdent indent | removeformat | a11ycheck code table help",
+
+          content_style:
+            "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
+        }}
       />
+
+      <button onClick={log} type="button">
+        Log editor content
+      </button>
     </>
   );
-};
-
-export default Editor;
+}

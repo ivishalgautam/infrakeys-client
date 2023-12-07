@@ -4,7 +4,8 @@ import React from "react";
 import CenterHeading from "../CenterHeading";
 // import Editor from "../Editor";
 import { MdDeleteOutline } from "react-icons/md";
-import ReactQuill from "react-quill";
+import MyEditor from "../Editor";
+// import ReactQuill from "react-quill";
 const BlogForm = ({
   formData,
   handleOnChange,
@@ -191,14 +192,15 @@ const BlogForm = ({
         {/* content */}
         <div className="inputGroup">
           <h3>Content</h3>
-          <ReactQuill
+          <MyEditor setContent={setContent} />
+          {/* <ReactQuill
             theme="snow"
             name="content"
             // value={formData.content}
             onChange={(e) => setContent(e)}
             modules={modules}
             formats={formats}
-          />
+          /> */}
         </div>
         <button className="commonBtn">Create Blog</button>
       </div>
