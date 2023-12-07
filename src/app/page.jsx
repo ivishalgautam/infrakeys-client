@@ -5,13 +5,13 @@ import Script from "next/script";
 import React from "react";
 
 export const metadata = {
-  title: "Best steel manufacturers in faridabad, Haryana",
+  title: "Best steel manufacturers in faridabad,Haryana-Infrakeys",
   keywords:
     "steel manufacturers in faridabad,steel fabricators nera me,industrial steel in faridabad,Steel supplier in India,scaffolding manufacturer in faridabad",
   description:
     "Infrakeys best steel manufacturers in Faridabad, Haryana, providing high-quality Steel supplier, fabricators,TMT,PEB manufacturers in India at best price.",
-  author: "",
-  publisher: "",
+  author: "Infrakeys",
+  publisher: "Infrakeys",
 };
 export default function Page() {
   return (
@@ -23,19 +23,21 @@ export default function Page() {
 
       <meta
         property="og:title"
-        content="Best steel manufacturers in faridabad,Haryana"
+        content="Best steel manufacturers in faridabad,Haryana-Infrakeys"
       />
-      {/* <meta property="og:site_name" content="Dr. Dipti's Smile Suite" />
-      <meta property="og:url" content="https://drdiptismilesuite.com" /> */}
+      <meta property="og:site_name" content="Infrakeys" />
+      <meta property="og:url" content="https://www.infrakeys.com/" />
+      <link rel="canonical" href="https://www.infrakeys.com/" />
       <meta
         property="og:description"
         content="Infrakeys best steel manufacturers in Faridabad, Haryana, providing high-quality Steel supplier, fabricators,TMT,PEB manufacturers in India at best price."
       />
-      <meta property="og:type" content="business.business" />
-      {/* <meta
+      <meta property="og:type" content="business" />
+      <meta
         property="og:image"
-        content="https://drdiptismilesuite.com/img/logo-nobg.png"
+        content="https://www.infrakeys.com/_next/image?url=%2Flogo.png&w=256&q=75"
       />
+      {/*
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@drdiptismilesuite" />
       <meta
