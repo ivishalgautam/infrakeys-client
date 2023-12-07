@@ -34,14 +34,16 @@ const formats = [
 
 const Editor = ({ setContent }) => {
   return (
-    <ReactQuill
-      theme="snow"
-      name="content"
-      // value={formData.content}
-      onChange={(e) => setContent(e)}
-      modules={modules}
-      formats={formats}
-    />
+    <>
+      <ReactQuill
+        theme="snow"
+        name="content"
+        // value={formData.content}
+        onChange={(e) => setContent(e)}
+        modules={modules}
+        formats={formats}
+      />
+    </>
   );
 };
 
