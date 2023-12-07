@@ -92,9 +92,9 @@ export default function Footer() {
                         <li>
                           <Link href="/categories">All Categories</Link>
                         </li>
-                        <li>
+                        {/* <li>
                           <Link href="/sub-categories">Sub Categories</Link>
-                        </li>
+                        </li> */}
                       </ul>
                     </div>
                   </div>
