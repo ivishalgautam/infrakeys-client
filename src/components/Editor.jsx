@@ -1,59 +1,48 @@
 "use client";
-import React, { useRef } from "react";
+import React from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
-const plugins = [
-  "a11ychecker",
-  "advlist",
-  "advcode",
-  "advtable",
-  "autolink",
-  "checklist",
-  "export",
+const modules = {
+  toolbar: [
+    [{ header: [1, 2, false] }],
+    ["bold", "italic", "underline", "strike", "blockquote"],
+    [
+      { list: "ordered" },
+      { list: "bullet" },
+      { indent: "-1" },
+      { indent: "+1" },
+    ],
+    ["link", "image"],
+    ["clean"],
+  ],
+};
 
-  "lists",
+const formats = [
+  "header",
+  "bold",
+  "italic",
+  "underline",
+  "strike",
+  "blockquote",
+  "list",
+  "bullet",
+  "indent",
   "link",
   "image",
-  "charmap",
-  "preview",
-  "anchor",
-  "searchreplace",
-  "visualblocks",
-
-  "powerpaste",
-  "fullscreen",
-  "formatpainter",
-  "insertdatetime",
-  "media",
-  "table",
-  "help",
-  "wordcount",
 ];
 
 const Editor = ({ setContent }) => {
-  const editorRef = useRef(null);
-
-  const log = () => {
-    if (editorRef.current) {
-      console.log(editorRef.current.getContent());
-    }
-  };
   return (
     <>
-      <Editor
-        onInit={(evt, editor) => (editorRef.current = editor)}
-        initialValue="<p>This is the initial content of the editor.</p>"
-        init={{
-          height: 500,
-          menubar: false,
-          plugins: plugins,
-          toolbar: `undo redo | casechange blocks | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist checklist outdent indent | removeformat | a11ycheck code table help`,
-          content_style: `body { font-family:Helvetica,Arial,sans-serif; font-size:14px }`,
-        }}
+      <ReactQuill
+        theme="snow"
+        name="content"
+        // value={formData.content}
+        onChange={(e) => setContent(e)}
+        modules={modules}
+        formats={formats}
       />
-
-      <button onClick={log}>Log editor content</button>
     </>
   );
 };
