@@ -6,26 +6,29 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
-export default function Page({ params: { subCategoryId, subCategoryName } }) {
+export default function Page({ params: { slug } }) {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    (async function () {
-      try {
+    publicRequest
+      .get(`/sub-categories/slug/${slug}`)
+      .then(({ data }) => {
+        return data[0];
+      })
+      .then(async (data) => {
         const resp = await publicRequest.get(`/products`);
-
         setProducts(
-          resp.data.filter((item) => item.sub_category_id === +subCategoryId)
+          resp.data.filter((item) => item.sub_category_id === data.id)
         );
-      } catch (error) {
+      })
+      .catch((error) => {
         console.log(error);
-      }
-    })();
-  }, [subCategoryId]);
+      });
+  }, [slug]);
   return (
     <>
       <section className="commonSection">
         <div className="container-fluid">
-          <CenterHeading heading={subCategoryName} />
+          <CenterHeading heading={slug} />
           <div className="row mt-3">
             {products?.map((product, key) => {
               return (

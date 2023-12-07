@@ -1244,3 +1244,32 @@ button.username svg {
   flex-wrap: wrap;
   gap: 20px;
 }
+
+.quill-container{
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-top: 2rem;
+}
+
+.tags-container{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.7rem;
+
+  .tag-wrapper {
+    background: #fb5001;
+    color:#fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+
+    button {
+      background-color: transparent;
+      border: none;
+      outline: none;
+    }
+  }
+}

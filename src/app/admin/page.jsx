@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { HiOutlineArrowTopRightOnSquare } from "react-icons/hi2";
 import Link from "next/link";
 import { MdFormatListBulletedAdd, MdOutlineFactory } from "react-icons/md";
-import { AiOutlineApartment, AiOutlinePartition } from "react-icons/ai";
+import { AiOutlinePartition } from "react-icons/ai";
 import { TfiDropboxAlt } from "react-icons/tfi";
 import ActionBtn from "./Components/ActionBtn";
 import { HiViewGridAdd } from "react-icons/hi";
@@ -12,8 +12,8 @@ import { TbUserQuestion } from "react-icons/tb";
 import { BiSolidPieChartAlt2 } from "react-icons/bi";
 import { publicRequest } from "@/libs/requestMethods";
 import { getCookie } from "@/utils/getCookie";
-import { useRouter } from "next/navigation";
 import { BsBoxSeam, BsCardImage } from "react-icons/bs";
+import { ImBlog } from "react-icons/im";
 
 export default function Page() {
   const [stats, setStats] = useState([]);
@@ -44,7 +44,7 @@ export default function Page() {
         headers: { Authorization: `Bearer ${getCookie("token")}` },
       });
       setUsers(resp.data);
-      console.log("User data", resp.data);
+      // console.log("User data", resp.data);
     })();
   }, []);
 
@@ -62,8 +62,7 @@ export default function Page() {
       }
     })();
   }, []);
-  console.log(stats);
-  const router = useRouter();
+  // console.log(stats);
   return (
     <>
       <section className="adminPanel">
@@ -121,6 +120,18 @@ export default function Page() {
                     name="View All Banners"
                     link="/admin/banners"
                     icon={<BsCardImage />}
+                  />
+                </div>
+                <div className="row" id="actionSubCategories">
+                  <ActionBtn
+                    name="Add Blog"
+                    link="/admin/blogs/add"
+                    icon={<HiViewGridAdd />}
+                  />
+                  <ActionBtn
+                    name="View All Blogs"
+                    link="/admin/blogs"
+                    icon={<ImBlog />}
                   />
                 </div>
               </div>

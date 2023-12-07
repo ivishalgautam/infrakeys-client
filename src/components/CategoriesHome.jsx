@@ -38,12 +38,7 @@ export default function CategoriesHome() {
                   category={category}
                   key={category.id}
                 >
-                  <Link
-                    href={`sub-categories/${category.name
-                      .toLowerCase()
-                      .split(" ")
-                      .join("-")}/${category.id}`}
-                  >
+                  <Link href={`sub-categories/${category.slug}`}>
                     <Image
                       src={`https://infrakeysapp.in${category.image_url}`}
                       alt={` ${category.name}  | Main Categories in Infrakeys`}
