@@ -24,7 +24,7 @@ const BlogForm = ({
 }) => {
   async function getBlogBySlug(slug) {
     try {
-      const { data } = await publicRequest.get(`/blogs/${slug}`);
+      const { data } = await publicRequest.get(`/blogs/slug/${slug}`);
       for (const [key, value] of Object.entries(data)) {
         if (key in formData) {
           setFormData((prev) => ({ ...prev, [key]: value }));

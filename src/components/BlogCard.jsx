@@ -8,7 +8,9 @@ const BlogCard = ({ blog, handleBlogDelete }) => {
   const router = useRouter();
   const pathname = usePathname();
   const handleNavigate = (id) => {
-    router.push(`/admin/blogs/update/${id}`);
+    getCookie("user_role") === "admin" && pathname.includes("/admin")
+      ? router.push(`/admin/blogs/update/${id}`)
+      : router.push(`/blog/${id}`);
   };
 
   function trim(text, length) {
@@ -17,7 +19,7 @@ const BlogCard = ({ blog, handleBlogDelete }) => {
 
   return (
     <div className="blog-card">
-      <div onClick={() => handleNavigate(blog.id)}>
+      <div onClick={() => handleNavigate(blog.slug)}>
         <div className={"image-container"}>
           <Image
             src={`https://infrakeysapp.in${blog.image}`}
