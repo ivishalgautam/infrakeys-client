@@ -2,10 +2,9 @@
 import Link from "next/link";
 import React from "react";
 import CenterHeading from "../CenterHeading";
-// import Editor from "../Editor";
 import { MdDeleteOutline } from "react-icons/md";
-import MyEditor from "../Editor";
-// import ReactQuill from "react-quill";
+import Editor from "../Editor";
+
 const BlogForm = ({
   formData,
   handleOnChange,
@@ -18,34 +17,6 @@ const BlogForm = ({
   type,
   tags,
 }) => {
-  const modules = {
-    toolbar: [
-      [{ header: [1, 2, false] }],
-      ["bold", "italic", "underline", "strike", "blockquote"],
-      [
-        { list: "ordered" },
-        { list: "bullet" },
-        { indent: "-1" },
-        { indent: "+1" },
-      ],
-      ["link", "image"],
-      ["clean"],
-    ],
-  };
-
-  const formats = [
-    "header",
-    "bold",
-    "italic",
-    "underline",
-    "strike",
-    "blockquote",
-    "list",
-    "bullet",
-    "indent",
-    "link",
-    "image",
-  ];
   return (
     <form onSubmit={handleFormSubmit}>
       <CenterHeading heading="Create blog" />
@@ -192,15 +163,7 @@ const BlogForm = ({
         {/* content */}
         <div className="inputGroup">
           <h3>Content</h3>
-          <MyEditor setContent={setContent} />
-          {/* <ReactQuill
-            theme="snow"
-            name="content"
-            // value={formData.content}
-            onChange={(e) => setContent(e)}
-            modules={modules}
-            formats={formats}
-          /> */}
+          <Editor setContent={setContent} />
         </div>
         <button className="commonBtn">Create Blog</button>
       </div>

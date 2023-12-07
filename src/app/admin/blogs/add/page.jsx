@@ -14,6 +14,7 @@ export default function AddBlog() {
 
   // console.log({ formData });
   const [content, setContent] = useState("");
+  console.log({ content });
   const [file, setFile] = useState("");
   const [tags, setTags] = useState([]);
   const [categories, setCategories] = useState([]);

@@ -1,28 +1,17 @@
 "use client";
-import React, { useRef } from "react";
+import React from "react";
 
 import { Editor } from "@tinymce/tinymce-react";
 
 export default function MyEditor({ setContent }) {
-  const editorRef = useRef(null);
-
-  const log = () => {
-    if (editorRef.current) {
-      // console.log(editorRef.current.getContent());
-      setContent(editorRef.current.getContent());
-    }
-  };
-
   return (
     <>
       <Editor
-        onInit={(evt, editor) => (editorRef.current = editor)}
-        initialValue="<p>This is the initial content of the editor.</p>"
+        // onInit={(evt, editor) => setContent(editor.getContent())}
+        onChange={(e) => setContent(e.lastLevel.content)}
         init={{
           height: 500,
-
           menubar: false,
-
           plugins: [
             "a11ychecker",
             "advlist",
@@ -61,9 +50,9 @@ export default function MyEditor({ setContent }) {
         }}
       />
 
-      <button onClick={log} type="button">
+      {/* <button onClick={log} type="button">
         Log editor content
-      </button>
+      </button> */}
     </>
   );
 }

@@ -5,7 +5,13 @@ import Script from "next/script";
 import React from "react";
 
 export const metadata = {
-  title: "Infrakeys | Best Parts Material Seller ",
+  title: "Best steel manufacturers in faridabad, Haryana",
+  keywords:
+    "steel manufacturers in faridabad,steel fabricators nera me,industrial steel in faridabad,Steel supplier in India,scaffolding manufacturer in faridabad",
+  description:
+    "Infrakeys best steel manufacturers in Faridabad, Haryana, providing high-quality Steel supplier, fabricators,TMT,PEB manufacturers in India at best price.",
+  author: "",
+  publisher: "",
 };
 export default function Page() {
   return (
@@ -14,6 +20,37 @@ export default function Page() {
         name="google-site-verification"
         content="kWcwy0Kag9MmpnCSMcrOL7VuQT5ZKjuBbZ6218QCpZw"
       />
+
+      <meta
+        property="og:title"
+        content="Best steel manufacturers in faridabad,Haryana"
+      />
+      {/* <meta property="og:site_name" content="Dr. Dipti's Smile Suite" />
+      <meta property="og:url" content="https://drdiptismilesuite.com" /> */}
+      <meta
+        property="og:description"
+        content="Infrakeys best steel manufacturers in Faridabad, Haryana, providing high-quality Steel supplier, fabricators,TMT,PEB manufacturers in India at best price."
+      />
+      <meta property="og:type" content="business.business" />
+      {/* <meta
+        property="og:image"
+        content="https://drdiptismilesuite.com/img/logo-nobg.png"
+      />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@drdiptismilesuite" />
+      <meta
+        name="twitter:title"
+        content="Dr. Dipti Smile Suite | Faridabad Dentist | Dental Care"
+      />
+      <meta
+        name="twitter:description"
+        content="Visit Dr. Dipti Smile Suite, your trusted Faridabad dentist, for top-quality personalized dental care. Our expert team ensures your smile shines bright with tailored treatments."
+      />
+      <meta
+        name="twitter:image"
+        content="https://drdiptismilesuite.com/img/logo-nobg.png"
+      /> */}
+
       <Script
         async
         src="https://www.googletagmanager.com/gtag/js?id=G-5W81C4E1WN"
