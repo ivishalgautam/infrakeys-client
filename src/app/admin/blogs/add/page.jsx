@@ -29,6 +29,10 @@ export default function AddBlog() {
   async function handleFormSubmit(e) {
     e.preventDefault();
 
+    if (!formData.category) {
+      return toast.error("Please select category!");
+    }
+
     if (tags.length <= 0) {
       return toast.error("Please add some tags");
     }

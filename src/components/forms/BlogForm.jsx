@@ -32,15 +32,15 @@ const BlogForm = ({
       }
       setContent(data.content);
       setTags(data.tags);
-      // console.log(blog.data);
     } catch (error) {
       console.log(error);
     }
   }
 
-  const handleFileChange = (e) => {
-    console.log({ file: e.target.files[0] });
-    type === "edit" ? uploadFile(e.target.files[0]) : setFile(e.target.files);
+  const handleFileChange = (e, id) => {
+    type === "edit"
+      ? uploadFile(e.target.files[0], id)
+      : setFile(e.target.files);
   };
 
   useEffect(() => {
@@ -126,7 +126,7 @@ const BlogForm = ({
             className="createInput"
             type="file"
             name="text"
-            onChange={(e) => handleFileChange(e)}
+            onChange={(e) => handleFileChange(e, formData.id)}
           />
         </div>
 

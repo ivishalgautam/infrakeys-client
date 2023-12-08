@@ -139,3 +139,9 @@
     border-radius: 4px;
   }
 }
+
+@media (max-width: 992px) {
+  .recent-blogs {
+    margin-top: 1rem;
+  }
+}

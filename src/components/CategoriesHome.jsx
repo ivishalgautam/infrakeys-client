@@ -17,7 +17,7 @@ export default function CategoriesHome() {
       try {
         const resp = await publicRequest.get("/sub-categories");
         setData(resp.data);
-        console.log(resp.data);
+        // console.log(resp.data);
       } catch (error) {
         console.log(error);
       }

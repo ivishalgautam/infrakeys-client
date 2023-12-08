@@ -10,6 +10,7 @@ export default function UpdateBlog({ params: { id } }) {
     summary: "",
     tag: "",
     category: "",
+    id: "",
   });
 
   const [content, setContent] = useState("");
@@ -46,7 +47,7 @@ export default function UpdateBlog({ params: { id } }) {
     }
   }
 
-  async function uploadFile(file) {
+  async function uploadFile(file, id) {
     const data = new FormData();
     data.set("file", file);
     try {
