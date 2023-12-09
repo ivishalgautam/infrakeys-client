@@ -14,7 +14,7 @@ export default function Blogs() {
 
   // pagination
   const [totalPages, setTotalPages] = useState(0);
-  const [resultsPerPage, setResultsPerPage] = useState(4);
+  const [resultsPerPage, setResultsPerPage] = useState(6);
   const params = useSearchParams();
   const pathname = usePathname();
   const startIndex = (parseInt(params.get("page") ?? 1) - 1) * resultsPerPage;
