@@ -11,7 +11,7 @@ const BlogCard = ({ blog, handleBlogDelete }) => {
   const handleNavigate = (id) => {
     getCookie("user_role") === "admin" && pathname.includes("/admin")
       ? router.push(`/admin/blogs/update/${id}`)
-      : router.push(`/blog/${id}`);
+      : router.push(`/blogs/${id}`);
   };
 
   return (

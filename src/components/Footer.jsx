@@ -89,6 +89,9 @@ export default function Footer() {
                         <li>
                           <Link href="/products">All Products</Link>
                         </li>
+                        <li>
+                          <Link href="/blogs">All blogs</Link>
+                        </li>
                         {/* <li>
                           <Link href="/categories">All Categories</Link>
                         </li> */}

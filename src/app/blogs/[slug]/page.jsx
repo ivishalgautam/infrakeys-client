@@ -93,7 +93,7 @@ export default async function BlogPage({ params: { slug } }) {
               ?.filter((blog) => blog.id !== data?.id)
               .slice(0, 5)
               .map((blog) => (
-                <Link key={blog.id} href={`/blog/${blog.slug}`}>
+                <Link key={blog.id} href={`/blogs/${blog.slug}`}>
                   <div className="recent-blog-card items-start mb-2">
                     <div className="img">
                       <Image
