@@ -15,10 +15,10 @@ export async function generateStaticParams() {
 
 export async function getServerSideProps({ params: { slug } }) {
   try {
-    const { data } = await publicRequest.get(`/sub-categories/slug/${slug}`);
+    const category = await publicRequest.get(`/sub-categories/slug/${slug}`);
     const resp = await publicRequest.get(`/products`);
     const products = await resp?.data?.filter(
-      (item) => item.sub_category_id === data?.id
+      (item) => item.sub_category_id === category?.id
     );
 
     console.log({ data, resp, products });
