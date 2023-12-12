@@ -32,7 +32,7 @@ export default function ProductCard({ id }) {
   }
   // console.log(product);
   async function sendOtp(e) {
-    console.log(getCookie("user_phone"));
+    // console.log(getCookie("user_phone"));
     e.preventDefault();
     try {
       const resp = await publicRequest.post("/send-otp", {
@@ -42,7 +42,7 @@ export default function ProductCard({ id }) {
       if (resp.data.result === true) {
         toast.success("OTP has been sent to your Whatsapp");
         handleNavigate();
-        console.log(resp.data);
+        // console.log(resp.data);
       }
       setShowOtpinput(true);
     } catch (error) {
@@ -80,7 +80,7 @@ export default function ProductCard({ id }) {
           },
         }
       );
-      console.log(resp.data);
+      // console.log(resp.data);
       if (resp.status === 200) {
         return toast((t) => (
           <span className="w300">
@@ -215,19 +215,18 @@ export default function ProductCard({ id }) {
           },
         });
         setRecentltViewed(resp.data);
-        console.log("recent", resp.data);
+        // console.log("recent", resp.data);
       } catch (error) {
         console.log(error);
       }
     }
     fetchRecentlyViewed(getCookie("user_id"));
   }, [id]);
-  console.log(product);
   return (
     <>
       <ProductBread
         name={product?.title}
-        productUrl={`/products/${product?.title}/${product.id}`}
+        productUrl={`/products/${product?.slug}`}
       />
       <section className="productAbout ligtbgSection">
         <div className="container-fluid">
@@ -397,22 +396,14 @@ export default function ProductCard({ id }) {
                           />
                         </div>
                         <div className="productContent">
-                          <Link
-                            href={`/products/${productItem.title
-                              .toLowerCase()
-                              .split(" ")
-                              .join("-")}/${productItem.id}`}
-                          >
+                          <Link href={`/products/${productItem.slug}`}>
                             <h3>{productItem.title}</h3>
                           </Link>
 
                           <Link
                             title="View More"
                             className="viewMore"
-                            href={`/products/${productItem.title
-                              .toLowerCase()
-                              .split(" ")
-                              .join("-")}/${productItem.id}`}
+                            href={`/products/${productItem.slug}`}
                           >
                             View Product
                             <BsChevronRight />
@@ -467,21 +458,13 @@ export default function ProductCard({ id }) {
                           />
                         </div>
                         <div className="productContent">
-                          <Link
-                            href={`/products/${productItem.title
-                              .toLowerCase()
-                              .split(" ")
-                              .join("-")}/${productItem.id}`}
-                          >
+                          <Link href={`/products/${productItem.slug}`}>
                             <h3>{productItem.title}</h3>
                           </Link>
                           <Link
                             title="View More"
                             className="viewMore"
-                            href={`/products/${productItem.title
-                              .toLowerCase()
-                              .split(" ")
-                              .join("-")}/${productItem.id}`}
+                            href={`/products/${productItem.slug}`}
                           >
                             View Product
                             <BsChevronRight />
