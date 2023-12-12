@@ -21,6 +21,8 @@ export async function getServerSideProps({ slug }) {
       (item) => item.sub_category_id === data?.id
     );
 
+    console.log({ data, resp, products });
+
     return {
       props: {
         slug: slug,
