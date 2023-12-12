@@ -139,7 +139,7 @@ export default function ProductCard({ id }) {
     (async function () {
       try {
         const resp = await publicRequest.get(`/products/${id}`);
-        setProduct(resp.data);
+        setProduct(resp?.data);
       } catch (error) {
         console.log(error);
       }
