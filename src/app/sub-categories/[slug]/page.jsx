@@ -12,7 +12,7 @@ export default function Page({ params: { slug } }) {
     publicRequest
       .get(`/sub-categories/slug/${slug}`)
       .then(({ data }) => {
-        return data[0];
+        return data;
       })
       .then(async (data) => {
         const resp = await publicRequest.get(`/products`);
