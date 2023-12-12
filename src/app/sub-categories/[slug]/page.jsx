@@ -15,20 +15,33 @@ export async function generateStaticParams() {
 
 export async function getServerSideProps({ params: { slug } }) {
   try {
-    const category = await publicRequest.get(`/sub-categories/slug/${slug}`);
-    const resp = await publicRequest.get(`/products`);
-    const products = await resp?.data?.filter(
-      (item) => item.sub_category_id === category?.id
-    );
+    await new Promise(async (resolve) => {
+      const data = await publicRequest.get(`/sub-categories/slug/${slug}`);
+      resolve();
+      return data;
+    })
+      .then(async (data) => {
+        const resp = await publicRequest.get(`/products`);
+        const products = await resp?.data?.filter(
+          (item) => item.sub_category_id === data?.id
+        );
+        return {
+          props: {
+            slug: slug,
+            products,
+          },
+        };
+      })
+      .catch((error) => {
+        return {
+          props: {
+            slug: slug,
+            products: [],
+          },
+        };
+      });
 
-    console.log({ data, resp, products });
-
-    return {
-      props: {
-        slug: slug,
-        products,
-      },
-    };
+    // console.log({ data, resp, products });
   } catch (error) {
     console.log(error);
     return {
