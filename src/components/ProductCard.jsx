@@ -17,7 +17,7 @@ import { FcApproval } from "react-icons/fc";
 import { BsChevronRight } from "react-icons/bs";
 import { useRouter } from "next/navigation";
 
-export default function ProductCard({ id }) {
+export default function ProductCard({ id, slug }) {
   const [relatedProducts, setRelatedProducts] = useState([]);
   const [recentltViewed, setRecentltViewed] = useState([]);
   const [product, setProduct] = useState({});
@@ -138,7 +138,7 @@ export default function ProductCard({ id }) {
 
     (async function () {
       try {
-        const resp = await publicRequest.get(`/products/${id}`);
+        const resp = await publicRequest.get(`/products/slug/${slug}`);
         setProduct(resp?.data);
       } catch (error) {
         console.log(error);
