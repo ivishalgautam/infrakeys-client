@@ -59,10 +59,7 @@ export default function Page() {
                     <Link
                       title="View More"
                       className="viewMore"
-                      href={`/products/${product?.title
-                        .toLowerCase()
-                        .split(" ")
-                        .join("-")}/${product?.id}`}
+                      href={`/products/${product?.slug}`}
                     >
                       View Product
                       <BsChevronRight />
