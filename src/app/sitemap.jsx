@@ -1,6 +1,6 @@
 import { publicRequest } from "@/libs/requestMethods";
 
-export default async function sitemap() {
+export default async function Sitemap() {
   const baseUrl = "https://infrakeys.com";
 
   // sub-categories urls
