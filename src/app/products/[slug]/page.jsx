@@ -38,5 +38,5 @@ export async function generateMetadata({ params: { slug } }) {
 }
 
 export default async function Page({ params: { slug, id } }) {
-  return <ProductCard slug={slug} id={id} />;
+  return <ProductCard slug={slug} id={pasrseInt(id)} />;
 }
