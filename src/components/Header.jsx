@@ -59,7 +59,7 @@ export default function Header() {
     }
 
     return () => {
-      setSearchTerm("");
+      // setSearchTerm("");
     };
   }, [debouncedSearch]);
 
