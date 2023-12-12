@@ -6,13 +6,13 @@ export async function generateStaticParams() {
   // console.log(products);
   if (!products) return [];
   return products?.data?.map((product) => ({
-    id: product.id.toString(),
+    slug: product.slug.toString(),
   }));
 }
 
-export async function generateMetadata({ params: { id } }) {
+export async function generateMetadata({ params: { slug } }) {
   try {
-    const { data } = await publicRequest.get(`/products/${id}`);
+    const { data } = await publicRequest.get(`/products/slug/${slug}`);
 
     if (!data) {
       return {
