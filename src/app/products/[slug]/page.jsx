@@ -7,6 +7,7 @@ export async function generateStaticParams() {
   if (!products) return [];
   return products?.data?.map((product) => ({
     slug: product.slug.toString(),
+    id: product?.id,
   }));
 }
 
@@ -22,9 +23,9 @@ export async function generateMetadata({ params: { slug } }) {
       };
     }
     return {
-      title: data.title,
-      description: data.about,
-      keywords: data.keywords,
+      title: data?.title,
+      description: data?.about,
+      keywords: data?.keywords,
     };
   } catch (error) {
     console.log(error);
@@ -36,6 +37,6 @@ export async function generateMetadata({ params: { slug } }) {
   }
 }
 
-export default async function Page({ params: { id } }) {
-  return <ProductCard id={id} />;
+export default async function Page({ params: { slug, id } }) {
+  return <ProductCard slug={slug} id={id} />;
 }
