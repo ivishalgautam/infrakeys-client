@@ -20,7 +20,7 @@ export async function getServerSideProps({ slug }) {
     );
     const resp = await publicRequest.get(`/products`);
     const products = resp?.data?.filter(
-      (item) => item.sub_category_id === data.id
+      (item) => item.sub_category_id === data?.id
     );
 
     return {
@@ -52,9 +52,9 @@ export async function generateMetadata({ params: { slug } }) {
       };
     }
     return {
-      title: data.title,
-      description: data.about,
-      keywords: data.keywords,
+      title: data?.title,
+      description: data?.about,
+      keywords: data?.keywords,
     };
   } catch (error) {
     console.log(error);
@@ -87,7 +87,7 @@ export default function Page({ params: { slug, products: product } }) {
             {/* {products?.map((product, key) => {
               return ( */}
             <div className="col-lg-3 col-md-4 col-sm-6 mb-4">
-              <div className="productCard" key={product.id}>
+              <div className="productCard" key={product?.id}>
                 <div className="productImg">
                   <Image
                     src={`https://infrakeysapp.in${product?.images[0]}`}
@@ -101,9 +101,9 @@ export default function Page({ params: { slug, products: product } }) {
                     <h3>{product?.title}</h3>
                   </Link>
                   <p>
-                    {product.about.length > 150
-                      ? product.about.substring(0, 150) + "..."
-                      : product.about}
+                    {product?.about?.length > 150
+                      ? product?.about?.substring(0, 150) + "..."
+                      : product?.about}
                   </p>
                   <Viewmore viewLink={`/products/${product?.slug}`} />
                 </div>
