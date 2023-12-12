@@ -51,12 +51,7 @@ export default function Page({ params: { slug } }) {
                           ? product.about.substring(0, 150) + "..."
                           : product.about}
                       </p>
-                      <Viewmore
-                        viewLink={`/products/${product?.title
-                          .toLowerCase()
-                          .split(" ")
-                          .join("-")}/${product?.id}`}
-                      />
+                      <Viewmore viewLink={`/products/${product?.slug}`} />
                     </div>
                   </div>
                 </div>
