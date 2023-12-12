@@ -21,7 +21,7 @@ export async function getServerSideProps({ slug }) {
     const resp = await publicRequest.get(`/products`);
     const products = resp?.data?.filter(
       (item) => item.sub_category_id === data?.id
-    );
+    )?.[0];
 
     return {
       props: {
