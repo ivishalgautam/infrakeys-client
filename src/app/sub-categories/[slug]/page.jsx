@@ -19,7 +19,7 @@ export async function getServerSideProps({ slug }) {
     const resp = await publicRequest.get(`/products`);
     const products = await resp?.data?.filter(
       (item) => item.sub_category_id === data?.id
-    )?.[0];
+    );
 
     return {
       props: {
@@ -64,7 +64,7 @@ export async function generateMetadata({ params: { slug } }) {
   }
 }
 
-export default function Page({ params: { slug, products: product } }) {
+export default function Page({ params: { slug, products } }) {
   // const [products, setProducts] = useState([]);
   // useEffect(() => {
   //   publicRequest
@@ -82,33 +82,33 @@ export default function Page({ params: { slug, products: product } }) {
         <div className="container-fluid">
           <CenterHeading heading={slug} />
           <div className="row mt-3">
-            {/* {products?.map((product, key) => {
-              return ( */}
-            <div className="col-lg-3 col-md-4 col-sm-6 mb-4">
-              <div className="productCard" key={product?.id}>
-                <div className="productImg">
-                  <Image
-                    src={`https://infrakeysapp.in${product?.images[0]}`}
-                    height={150}
-                    width={300}
-                    alt={`${product?.title} Products | Infrakeys`}
-                  />
+            {products?.map((product, key) => {
+              return (
+                <div className="col-lg-3 col-md-4 col-sm-6 mb-4">
+                  <div className="productCard" key={product?.id}>
+                    <div className="productImg">
+                      <Image
+                        src={`https://infrakeysapp.in${product?.images[0]}`}
+                        height={150}
+                        width={300}
+                        alt={`${product?.title} Products | Infrakeys`}
+                      />
+                    </div>
+                    <div className="productContent">
+                      <Link href="/">
+                        <h3>{product?.title}</h3>
+                      </Link>
+                      <p>
+                        {product?.about?.length > 150
+                          ? product?.about?.substring(0, 150) + "..."
+                          : product?.about}
+                      </p>
+                      <Viewmore viewLink={`/products/${product?.slug}`} />
+                    </div>
+                  </div>
                 </div>
-                <div className="productContent">
-                  <Link href="/">
-                    <h3>{product?.title}</h3>
-                  </Link>
-                  <p>
-                    {product?.about?.length > 150
-                      ? product?.about?.substring(0, 150) + "..."
-                      : product?.about}
-                  </p>
-                  <Viewmore viewLink={`/products/${product?.slug}`} />
-                </div>
-              </div>
-            </div>
-            {/* );
-            })} */}
+              );
+            })}
           </div>
         </div>
       </section>
