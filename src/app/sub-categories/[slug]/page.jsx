@@ -13,7 +13,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function getServerSideProps({ slug }) {
+export async function getServerSideProps({ params: { slug } }) {
   try {
     const { data } = await publicRequest.get(`/sub-categories/slug/${slug}`);
     const resp = await publicRequest.get(`/products`);
