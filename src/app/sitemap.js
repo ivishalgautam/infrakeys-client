@@ -1,3 +1,5 @@
+import { publicRequest } from "@/libs/requestMethods";
+
 export default async function sitemap() {
   const baseUrl = "https://infrakeys.com";
 
