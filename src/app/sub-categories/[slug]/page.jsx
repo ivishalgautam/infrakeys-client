@@ -1,10 +1,8 @@
-"use client";
 import CenterHeading from "@/components/CenterHeading";
 import Viewmore from "@/components/Viewmore";
 import { publicRequest } from "@/libs/requestMethods";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
 
 export async function generateStaticParams() {
   const categories = await publicRequest.get(`/sub-categories`);
@@ -70,16 +68,16 @@ export async function generateMetadata({ params: { slug } }) {
 
 export default function Page({ params: { slug, products: product } }) {
   // const [products, setProducts] = useState([]);
-  useEffect(() => {
-    publicRequest
-      .get(`/sub-categories/slug/${slug}`)
-      .then(({ data }) => {
-        return data[0];
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, [slug]);
+  // useEffect(() => {
+  //   publicRequest
+  //     .get(`/sub-categories/slug/${slug}`)
+  //     .then(({ data }) => {
+  //       return data[0];
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }, [slug]);
   return (
     <>
       <section className="commonSection">
