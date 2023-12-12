@@ -17,7 +17,7 @@ export async function getServerSideProps({ slug }) {
   try {
     const { data } = await publicRequest.get(`/sub-categories/slug/${slug}`);
     const resp = await publicRequest.get(`/products`);
-    const products = resp?.data?.filter(
+    const products = await resp?.data?.filter(
       (item) => item.sub_category_id === data?.id
     )?.[0];
 
