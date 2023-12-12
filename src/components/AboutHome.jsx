@@ -1,5 +1,6 @@
 import React from "react";
 import LeftHeading from "./LeftHeading";
+import Link from "next/link";
 
 export default function AboutHome() {
   return (
@@ -8,15 +9,17 @@ export default function AboutHome() {
         <LeftHeading heading="About Us" />
         {/* mhsv */}
         <p>
-          With the good years of working experience in the same sector,
-          Infrakeys is internationally appreciated for assembling and
-          appropriating the unrivaled nature of mechanical merchandise.
-          Infrakeys was fused in 2017, with a will to offer top tier items
-          driven by Quality and Innovation. It was set up as an exchanging unit
-          for a wide range of gentle steel items and presently has as of late
-          ventured into the development of Pre-Engineered Steel Buildings,
-          Pre-Fabricated Structures and so forth.
+          At Infrakeys, we are dedicated to transforming the way you source
+          construction materials for the infrastructure sector. Infrakeys is
+          more than just a marketplace; it's a comprehensive solution designed
+          to streamline your procurement process and enhance your project
+          efficiency. Our platform offers a wide range of construction material
+          categories to meet your diverse needs...
         </p>
+
+        <Link href={"/about"} className="viewMore">
+          View more
+        </Link>
       </div>
     </>
   );

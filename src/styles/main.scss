@@ -1448,3 +1448,48 @@ button.username svg {
       font-size: 10px;
   }
 }
+
+.about-container{
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+.aboutBanner{
+  margin-bottom: 2rem;
+}
+.img-container{
+  height: 10rem;
+  background: #fb5001;
+  border-radius: 1rem;
+
+  >div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: white;
+    margin: 0;
+    font-size: 5rem;
+    font-weight: 700;
+  }
+}
+.aboutContent{
+  >ul {
+    --icon-space: 1.3em;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1rem;
+  }
+  
+  li {
+    padding-left: var(--icon-space);
+  }
+  
+  li:before {
+    content: "\2713"; /* FontAwesome Unicode */
+    font-family: FontAwesome;
+    display: inline-block;
+    margin-left: calc( var(--icon-space) * -1 );
+    width: var(--icon-space);
+  }
+}

@@ -1,0 +1,75 @@
+import Image from "next/image";
+import React from "react";
+
+export default function Page() {
+  return (
+    <>
+      <title>Infrakeys | About</title>
+      <section className="plainSection">
+        <div className="container-fluid about-container">
+          <div className="aboutBanner">
+            {/* <Image/> */}
+            <div className="img-container">
+              <div>About Us</div>
+            </div>
+          </div>
+
+          <div className="aboutContent">
+            <p>
+              At Infrakeys, we are dedicated to transforming the way you source
+              construction materials for the infrastructure sector. Infrakeys is
+              more than just a marketplace; it's a comprehensive solution
+              designed to streamline your procurement process and enhance your
+              project efficiency. Our platform offers a wide range of
+              construction material categories to meet your diverse needs,
+              including:
+            </p>
+            <ul>
+              <li>
+                HR(hot rolled ) all special grades up to 550 mpa thickness 1.6
+                to 32 mm authorised dealer of Tata steel
+              </li>
+              <li>GC Sheets/Color Corrugated sheets</li>
+              <li>GL (Galvalume) AZ150 550 mpa 0.47mm thick</li>
+              <li>PPGL (Pre Painted Galvalume) AZ150 550 mpa 0.50mm thick.</li>
+              <li>
+                GPSP 120 gsm, oily & non-Oily huge stock available, make –POSCO.
+              </li>
+              <li>GP(galvanized plain) up to 275 gsm & upto 345 mpa</li>
+              <li>
+                Steel Raw Material (Structural steel Flats and Long Products)
+              </li>
+              <li>Scaffolding Materials</li>
+              <li>Nails and Hardware</li>
+              <li>Safety Equipment</li>
+              <li>Wire Mesh</li>
+              <li>Building Materials</li>
+            </ul>
+            <p>
+              We Operate in Mumbai, Hyderabad, Raipur, Kolkata, Ahmedabad,
+              Bangalore and Delhi NCR with manufacturing units in Faridabad and
+              Raipur. What sets Infrakeys apart is our commitment to providing
+              you direct access to trusted vendors. This direct connection
+              ensures competitive prices in the market, allowing you to optimise
+              your budget while maintaining the highest quality standards.
+              Additionally, we understand the importance of financial
+              flexibility in your projects. That's why Infrakeys offers channel
+              financing options to make your procurement process even smoother.
+            </p>
+            <p>
+              We believe that Infrakeys will be an invaluable resource for your
+              construction material needs, helping you save time, reduce costs,
+              and achieve project success more efficiently. If you have any
+              questions, require assistance, or wish to discuss a specific
+              project, please do not hesitate to reach out to me directly or our
+              dedicated customer support team on 8130376622 or you can share
+              your valuable query on sales@infrakeys.com We look forward to
+              serving you through Infrakeys and contributing to the success of
+              your projects.
+            </p>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

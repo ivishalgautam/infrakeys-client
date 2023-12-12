@@ -48,7 +48,7 @@ export default function Header() {
         .get(`/search?q=${debouncedSearch}`)
         .then((response) => {
           setSearchResults(response.data);
-          console.log(response.data);
+          // console.log(response.data);
         })
         .catch((error) => {
           console.error("Error fetching data:", error);
@@ -57,6 +57,10 @@ export default function Header() {
       // Clear search results if debouncedSearch is empty
       setSearchResults([]);
     }
+
+    return () => {
+      setSearchTerm("");
+    };
   }, [debouncedSearch]);
 
   function handleNavigate() {
@@ -98,10 +102,7 @@ export default function Header() {
                       return (
                         <li key={key}>
                           <Link
-                            href={`/products/${item.title
-                              .toLowerCase()
-                              .split(" ")
-                              .join("-")}/${item.id}`}
+                            href={`/products/${item.slug}`}
                             title={item.title}
                           >
                             <div className="searchLink">
