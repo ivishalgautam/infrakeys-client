@@ -15,9 +15,7 @@ export async function generateStaticParams() {
 
 export async function getServerSideProps({ slug }) {
   try {
-    const { data } = await publicRequest.get(
-      `/sub-categories/slug/${params.slug}`
-    );
+    const { data } = await publicRequest.get(`/sub-categories/slug/${slug}`);
     const resp = await publicRequest.get(`/products`);
     const products = resp?.data?.filter(
       (item) => item.sub_category_id === data?.id
@@ -42,7 +40,7 @@ export async function getServerSideProps({ slug }) {
 
 export async function generateMetadata({ params: { slug } }) {
   try {
-    const { data } = await publicRequest.get(`/products/slug/${slug}`);
+    const { data } = await publicRequest.get(`/sub-categories/slug/${slug}`);
 
     if (!data) {
       return {
