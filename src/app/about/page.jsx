@@ -5,6 +5,14 @@ export default function Page() {
   return (
     <>
       <title>Infrakeys | About</title>
+      <meta
+        name="keywords"
+        content="Structural Steel Supplier in Haryana,Scaffolding manufacturers,Industrial Steel in faridabad ,Quality building products,Marble and granite supplier ,Roofing materials "
+      />
+      <meta
+        name="description"
+        content="Infrakeys, we are dedicated to transforming the way you source construction materials for the infrastructure sector. Infrakeys is more than just a marketplace;"
+      />
       <section className="plainSection">
         <div className="container-fluid about-container">
           <div className="aboutBanner">

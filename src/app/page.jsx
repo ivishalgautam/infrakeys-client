@@ -75,6 +75,49 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-WN9SB6DD');`}
       </Script>
       {/* <!-- End Google Tag Manager --> */}
+
+      <Script type="application/ld+json">
+        {`
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Infrakeys",
+  "image": "https://www.infrakeys.com/_next/image?url=%2Flogo.png&w=256&q=75",
+  "@id": "",
+  "url": "https://www.infrakeys.com/",
+  "telephone": "+91 8130376622",
+  "priceRange": "₹",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "519-521, 5th floor, The Business Hub, Sector-81",
+    "addressLocality": "Greater Faridabad",
+    "postalCode": "121007",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 28.4373388,
+    "longitude": 77.0996702
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "opens": "10:00",
+    "closes": "06:30"
+  },
+  "sameAs": [
+    "",
+    "",
+    ""
+  ] `}
+      </Script>
+
       <Hero />
       <CategoriesHome />
       <Blogs />
