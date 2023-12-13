@@ -5,6 +5,8 @@ export default function Page() {
   return (
     <>
       <title>Infrakeys | About</title>
+      <meta name="title" content="Infrakeys | About" />
+      <meta name="og:title" content="Infrakeys | About" />
       <meta
         name="keywords"
         content="Structural Steel Supplier in Haryana,Scaffolding manufacturers,Industrial Steel in faridabad ,Quality building products,Marble and granite supplier ,Roofing materials "
@@ -13,12 +15,26 @@ export default function Page() {
         name="description"
         content="Infrakeys, we are dedicated to transforming the way you source construction materials for the infrastructure sector. Infrakeys is more than just a marketplace;"
       />
+      <meta
+        name="og:description"
+        content="Infrakeys, we are dedicated to transforming the way you source construction materials for the infrastructure sector. Infrakeys is more than just a marketplace;"
+      />
+      <meta property="og:site_name" content="Infrakeys" />
+      <meta property="og:type" content="business" />
+      <meta
+        property="og:image"
+        content="https://www.infrakeys.com/_next/image?url=%2Flogo.png&w=256&q=75"
+      />
+      <meta property="og:url" content="https://www.infrakeys.com/about" />
+
+      <link rel="canonical" href="https://www.infrakeys.com/about" />
+
       <section className="plainSection">
         <div className="container-fluid about-container">
           <div className="aboutBanner">
             {/* <Image/> */}
             <div className="img-container">
-              <div>About Us</div>
+              <h1>About Us</h1>
             </div>
           </div>
 
@@ -65,15 +81,15 @@ export default function Page() {
               financing options to make your procurement process even smoother.
             </p>
             <p>
-              We believe that Infrakeys will be an invaluable resource for your
-              construction material needs, helping you save time, reduce costs,
-              and achieve project success more efficiently. If you have any
-              questions, require assistance, or wish to discuss a specific
-              project, please do not hesitate to reach out to me directly or our
-              dedicated customer support team on 8130376622 or you can share
-              your valuable query on sales@infrakeys.com We look forward to
-              serving you through Infrakeys and contributing to the success of
-              your projects.
+              We believe that <a href="https://www.infrakeys.com/">Infrakeys</a>{" "}
+              will be an invaluable resource for your construction material
+              needs, helping you save time, reduce costs, and achieve project
+              success more efficiently. If you have any questions, require
+              assistance, or wish to discuss a specific project, please do not
+              hesitate to reach out to me directly or our dedicated customer
+              support team on 8130376622 or you can share your valuable query on
+              sales@infrakeys.com We look forward to serving you through
+              Infrakeys and contributing to the success of your projects.
             </p>
           </div>
         </div>
