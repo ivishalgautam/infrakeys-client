@@ -29,7 +29,10 @@ export default function CategoriesHome() {
       {/* d-flex justify-content-start row-cols-xs-2 row-cols-lg-8 */}
       <section className="commonSection">
         <div className="container-fluid">
-          <CenterHeading heading="Product Categories" />
+          <h1 className="centerHeading">
+            Construction Materials Product Categories
+          </h1>
+          {/* <CenterHeading heading="Product Categories" /> */}
           <div className="categoriesGrid">
             {data?.map((category) => {
               return (
