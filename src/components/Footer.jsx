@@ -112,9 +112,9 @@ export default function Footer() {
                         <PiPhoneCallFill />
                         <span>+91 8130376622</span>
                       </a>
-                      <a href="mail:info@infrakeys.com">
+                      <a href="mail:sales@infrakeys.com">
                         <FiSend />
-                        <span>info@infrakeys.com</span>
+                        <span>sales@infrakeys.com</span>
                       </a>
                       <a href="#">
                         <div className="row">
