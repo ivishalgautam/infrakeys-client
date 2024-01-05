@@ -22,6 +22,7 @@ export default function Page() {
         const resp = await publicRequest.get("/categories", {
           headers: { Authorization: `Bearer ${getCookie("token")}` },
         });
+        console.log(resp.data);
         setCategories(resp.data);
       } catch (error) {
         // Handle error

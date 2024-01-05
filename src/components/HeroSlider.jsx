@@ -37,10 +37,10 @@ export default function HeroSlider() {
               <div className="homeSlides">
                 <Link
                   className="d-block"
-                  href={`/categories/${slide.category_name
+                  href={`/sub-categories/${slide.category_name
                     .toLowerCase()
                     .split(" ")
-                    .join("-")}/${slide.category_id}`}
+                    .join("-")}`}
                   title={slide.name}
                 >
                   <Image
