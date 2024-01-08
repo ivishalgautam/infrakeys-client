@@ -1,16 +1,4 @@
 "use client";
-import AhluwaliaContracts from "../../../assets/images/Ahulwalia_Contracts.png";
-import IndianOil from "../../../assets/images/indianoil_logo.png";
-import Interarch from "../../../assets/images/Interarch_logo.png";
-import Kalpatpowr from "../../../assets/images/KALPATPOWR.NS_logo.png";
-import Kirby from "../../../assets/images/Kirby.png";
-import LT from "../../../assets/images/L&T.png";
-import Navayuga from "../../../assets/images/Navayuga.png";
-import Ncrtc from "../../../assets/images/NCRTC_LOGO.png";
-import Shapoorji from "../../../assets/images/Shapoorji_Pallonji.png";
-import Tata from "../../../assets/images/Tata_Projects_Logo.png";
-
-import Image from "next/image";
 import CenterHeading from "@/components/CenterHeading";
 
 export default function Clientele() {
@@ -20,21 +8,20 @@ export default function Clientele() {
       <div className="container-fluid mt-4">
         <div className="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 justify-content-center">
           {[
-            AhluwaliaContracts,
-            IndianOil,
-            Interarch,
-            Kalpatpowr,
-            Kirby,
-            LT,
-            Navayuga,
-            Ncrtc,
-            Shapoorji,
-            Tata,
+            "/Ahulwalia_Contracts.png",
+            "/indianoil_logo.png",
+            "/Interarch_logo.png",
+            "/KALPATPOWR.NS_logo.png",
+            "/Kirby.png",
+            "/L&T.png",
+            "/Navayuga.png",
+            "/NCRTC_LOGO.png",
+            "/Shapoorji_Pallonji.png",
+            "/Tata_Projects_Logo.png",
           ].map((item, key) => (
-            <div className="col">
-              <Image
-                key={key}
-                {...item}
+            <div className="col" key={key}>
+              <img
+                src={item}
                 style={{
                   background: "#fff",
                   width: "100%",

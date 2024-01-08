@@ -1495,13 +1495,18 @@ button.username svg {
     width: var(--icon-space);
   }
 }
+.clientele-image-container {
 
-.clientele-grid{
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-}
-.clientele-grid>div{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+
+  > div {
+    position: unset !important;
+  }
+
+  .image {
+    object-fit: contain;
+    width: 100% !important;
+    position: relative !important;
+    height: unset !important;
+  }
 }
