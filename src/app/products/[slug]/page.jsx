@@ -23,8 +23,8 @@ export async function generateMetadata({ params: { slug } }) {
       };
     }
     return {
-      title: data?.title,
-      description: data?.about,
+      title: data?.meta_title,
+      description: data?.meta_desc,
       keywords: data?.keywords,
     };
   } catch (error) {

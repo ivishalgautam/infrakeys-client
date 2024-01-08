@@ -35,6 +35,8 @@ export default function AddProductAbout({
     formData.append("about", inputs.about);
     formData.append("images", JSON.stringify(inputs.images));
     formData.append("keywords", inputs.keywords);
+    formData.append("meta_title", inputs.meta_title);
+    formData.append("meta_desc", inputs.meta_desc);
 
     try {
       const resp = await publicRequest.put(`/products/${productId}`, formData, {
@@ -83,6 +85,8 @@ export default function AddProductAbout({
           images: resp.data.images,
           sub_category_id: resp.data.sub_category_id,
           keywords: resp.data.keywords,
+          meta_title: resp.data.meta_title,
+          meta_desc: resp.data.meta_desc,
         }));
       }
 
@@ -95,7 +99,8 @@ export default function AddProductAbout({
     <div className="container-fluid">
       <AdminHeading heading="Product About" />
       <form className="row" onSubmit={handleFormSubmit}>
-        <div className="col-lg-5">
+        {/* title */}
+        <div className="col-lg-6">
           <div className="inputGroup">
             <input
               required
@@ -114,7 +119,30 @@ export default function AddProductAbout({
             <label className="user-label">Product Title</label>
           </div>
         </div>
-        <div className="col-lg-3">
+
+        {/* meta title */}
+        <div className="col-lg-6">
+          <div className="inputGroup">
+            <input
+              required
+              type="text"
+              name="meta_title"
+              autoComplete="off"
+              className="createInput"
+              value={inputs?.meta_title}
+              onChange={(e) =>
+                setInputs((prev) => ({
+                  ...prev,
+                  [e.target.name]: e.target.value,
+                }))
+              }
+            />
+            <label className="user-label">Meta Title</label>
+          </div>
+        </div>
+
+        {/* sub category */}
+        <div className="col-lg-6 mt-4">
           <div className="inputGroup">
             <select
               required
@@ -146,7 +174,9 @@ export default function AddProductAbout({
             <label className="user-label">Select Sub Category</label>
           </div>
         </div>
-        <div className="col-lg-4">
+
+        {/* image */}
+        <div className="col-lg-6 mt-4">
           <div className="inputGroup">
             <input
               required
@@ -159,6 +189,8 @@ export default function AddProductAbout({
             />
           </div>
         </div>
+
+        {/* desc */}
         <div className="col-12 mt-3">
           <div className="inputGroup">
             <textarea
@@ -177,6 +209,28 @@ export default function AddProductAbout({
               }
             />
             <label className="user-label">About Description</label>
+          </div>
+        </div>
+
+        {/* meta desc */}
+        <div className="col-12 mt-3">
+          <div className="inputGroup">
+            <textarea
+              required
+              type="text"
+              name="meta_desc"
+              autoComplete="off"
+              className="createInput"
+              rows="5"
+              value={inputs.meta_desc}
+              onChange={(e) =>
+                setInputs((prev) => ({
+                  ...prev,
+                  [e.target.name]: e.target.value,
+                }))
+              }
+            />
+            <label className="user-label">Meta Description</label>
           </div>
         </div>
 

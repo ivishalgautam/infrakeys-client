@@ -22,7 +22,10 @@ export default function Page({ params: { id } }) {
     featureDesc: "",
     applicationText: "",
     keywords: "",
+    meta_title: "",
+    meta_desc: "",
   });
+  console.log({ inputs });
   const [productId, setProductId] = useState(null);
 
   useEffect(() => {
