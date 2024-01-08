@@ -30,7 +30,6 @@ export default function Page({ params: { id } }) {
       await publicRequest.get(`/products/${id}`).then((resp) => {
         setProductData(resp.data);
         setProductId(resp.data.id);
-        // setSubCategoryId(resp.data.sub_category_id);
         console.log(resp.data);
       });
     })();

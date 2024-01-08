@@ -80,6 +80,11 @@ export default function Page() {
               flexibility in your projects. That's why Infrakeys offers channel
               financing options to make your procurement process even smoother.
             </p>
+            <p>
+              We look forward to serving you through{" "}
+              <a href="https://infrakeys.com/">Infrakeys</a> and contributing to
+              the success of your projects.
+            </p>
           </div>
         </div>
       </section>

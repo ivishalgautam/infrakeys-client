@@ -8,7 +8,6 @@ import { getCookie } from "@/utils/getCookie";
 
 export default function AddFeatures({ productId, inputs, setInputs }) {
   const [features, setFeatures] = useState([]);
-  console.log(features);
 
   async function handleFormFeatures(e) {
     e.preventDefault();
