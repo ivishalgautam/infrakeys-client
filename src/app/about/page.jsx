@@ -80,17 +80,6 @@ export default function Page() {
               flexibility in your projects. That's why Infrakeys offers channel
               financing options to make your procurement process even smoother.
             </p>
-            <p>
-              We believe that <a href="https://www.infrakeys.com/">Infrakeys</a>{" "}
-              will be an invaluable resource for your construction material
-              needs, helping you save time, reduce costs, and achieve project
-              success more efficiently. If you have any questions, require
-              assistance, or wish to discuss a specific project, please do not
-              hesitate to reach out to me directly or our dedicated customer
-              support team on 8130376622 or you can share your valuable query on
-              sales@infrakeys.com We look forward to serving you through
-              Infrakeys and contributing to the success of your projects.
-            </p>
           </div>
         </div>
       </section>

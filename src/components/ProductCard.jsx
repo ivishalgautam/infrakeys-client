@@ -27,6 +27,8 @@ export default function ProductCard({ id, slug }) {
   const [productUsedBy, setProductUsedBy] = useState([]);
   const router = useRouter();
 
+  console.log({ product });
+
   function handleNavigate() {
     router.push("/otpverify");
   }

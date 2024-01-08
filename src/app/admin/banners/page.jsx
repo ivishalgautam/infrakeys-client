@@ -32,6 +32,7 @@ export default function Page() {
       try {
         const resp = await publicRequest.get("/banners");
         setHeroslides(resp.data);
+        console.log(resp.data);
       } catch (error) {
         console.log(error);
       }

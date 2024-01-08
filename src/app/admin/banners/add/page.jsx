@@ -14,15 +14,14 @@ export default function Page() {
     name: "",
   });
   const [categories, setCategories] = useState([]);
-  console.log(inputVals);
 
   useEffect(() => {
     async function fetchCategories() {
       try {
-        const resp = await publicRequest.get("/categories", {
+        const resp = await publicRequest.get("/sub-categories", {
           headers: { Authorization: `Bearer ${getCookie("token")}` },
         });
-        console.log(resp.data);
+        // console.log(resp.data);
         setCategories(resp.data);
       } catch (error) {
         // Handle error

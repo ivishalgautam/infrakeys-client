@@ -31,7 +31,7 @@ export default function Page({ params: { id } }) {
         setProductData(resp.data);
         setProductId(resp.data.id);
         // setSubCategoryId(resp.data.sub_category_id);
-        // console.log(resp.data);
+        console.log(resp.data);
       });
     })();
   }, [id]);
