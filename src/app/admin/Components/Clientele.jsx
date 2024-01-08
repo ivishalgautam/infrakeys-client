@@ -34,7 +34,7 @@ export default function Clientele() {
             <div className="col">
               <Image
                 key={key}
-                src={item}
+                {...item}
                 style={{
                   background: "#fff",
                   width: "100%",
