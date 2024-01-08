@@ -122,7 +122,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <Hero />
       <CategoriesHome />
       <Blogs />
-      {/* <Clientele /> */}
+      <Clientele />
 
       {/* Google Tag Manager (noscript)  */}
       <noscript>
