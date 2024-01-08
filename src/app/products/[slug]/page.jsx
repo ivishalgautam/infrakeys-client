@@ -26,6 +26,13 @@ export async function generateMetadata({ params: { slug } }) {
       title: data?.meta_title || data?.title,
       description: data?.meta_desc,
       keywords: data?.keywords,
+      alternates: {
+        canonical: `https://infrakeys.com/products/${data?.title}`,
+      },
+      openGraph: {
+        title: data?.meta_title || data?.title,
+        description: data?.meta_desc,
+      },
     };
   } catch (error) {
     console.log(error);
