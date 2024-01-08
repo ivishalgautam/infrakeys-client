@@ -28,7 +28,6 @@ export default function Page() {
     email: "",
     password: "",
   });
-  console.log(inputVals);
   async function handleLogin(e) {
     e.preventDefault();
     try {

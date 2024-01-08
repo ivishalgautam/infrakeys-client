@@ -14,7 +14,6 @@ export default function Page() {
   });
   const [categories, setCategories] = useState([]);
   const router = useRouter();
-  console.log(inputVals);
   function handleNavigate() {
     router.push("/admin");
   }

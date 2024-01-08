@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import Head from "next/head";
 import Script from "next/script";
 import React from "react";
+import Clientele from "./admin/Components/Clientele";
 
 export const metadata = {
   title: "Best steel manufacturers in faridabad,Haryana-Infrakeys",
@@ -121,6 +122,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <Hero />
       <CategoriesHome />
       <Blogs />
+      {/* <Clientele /> */}
+
       {/* Google Tag Manager (noscript)  */}
       <noscript>
         <iframe

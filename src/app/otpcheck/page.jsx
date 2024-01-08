@@ -62,7 +62,6 @@ export default function Page() {
       toast.error(error.response.data.message);
     }
   }
-  console.log(inputVals);
   return (
     <>
       <section className="loginSection">

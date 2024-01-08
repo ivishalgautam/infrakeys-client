@@ -27,7 +27,7 @@ export async function generateMetadata({ params: { slug } }) {
       description: data?.meta_desc,
       keywords: data?.keywords,
       alternates: {
-        canonical: `https://infrakeys.com/products/${data?.title}`,
+        canonical: `https://www.infrakeys.com/products/${data?.slug}`,
       },
       openGraph: {
         title: data?.meta_title || data?.title,

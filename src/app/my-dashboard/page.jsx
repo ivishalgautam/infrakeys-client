@@ -37,7 +37,7 @@ export default function Page() {
           },
         });
         setProducts(resp.data);
-        console.log("recent", resp.data);
+        // console.log("recent", resp.data);
       } catch (error) {
         console.log(error);
       }
@@ -52,7 +52,7 @@ export default function Page() {
           },
         });
         setUser(resp.data);
-        console.log("user", resp.data);
+        // console.log("user", resp.data);
       } catch (error) {
         console.log(error);
       }
@@ -69,7 +69,7 @@ export default function Page() {
           }
         );
         setUserQueries(resp.data);
-        console.log("queries", resp.data);
+        // console.log("queries", resp.data);
       } catch (error) {
         console.log(error);
       }
