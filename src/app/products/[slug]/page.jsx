@@ -23,7 +23,7 @@ export async function generateMetadata({ params: { slug } }) {
       };
     }
     return {
-      title: data?.meta_title,
+      title: data?.meta_title || data?.title,
       description: data?.meta_desc,
       keywords: data?.keywords,
     };
