@@ -28,7 +28,7 @@ export default function Page({ params: { slug } }) {
     <>
       <section className="commonSection">
         <div className="container-fluid">
-          <CenterHeading heading={slug} />
+          <CenterHeading heading={slug.split("-").join(" ")} />
           <div className="row mt-3">
             {products?.map((product, key) => {
               return (

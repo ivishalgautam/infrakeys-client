@@ -31,6 +31,9 @@ export default function HeroSlider() {
           }}
           modules={[Pagination]}
           className="heroslider"
+          autoplay={{
+            delay: 5000,
+          }}
         >
           {heroslides.map((slide) => (
             <SwiperSlide key={slide.id}>
@@ -43,11 +46,11 @@ export default function HeroSlider() {
                     .join("-")}`}
                   title={slide.name}
                 >
-                  <Image
+                  <img
                     src={`https://infrakeysapp.in${slide.banner_url}`}
-                    width={900}
+                    // width={900}
+                    // height={300}
                     alt={`${slide.name} | Home Screen Banners | Infrakeys`}
-                    height={300}
                   />
                 </Link>
               </div>
