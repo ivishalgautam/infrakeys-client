@@ -9,7 +9,6 @@ export default function Clientele() {
         <div className="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 justify-content-center">
           {[
             "/Ahulwalia_Contracts.png",
-            "/indianoil_logo.png",
             "/Interarch_logo.png",
             "/KALPATPOWR.NS_logo.png",
             "/Kirby.png",
