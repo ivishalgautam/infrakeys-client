@@ -33,10 +33,11 @@ export default function AddProductAbout({
     formData.append("title", inputs.title);
     formData.append("sub_category_id", inputs.sub_category_id);
     formData.append("about", inputs.about);
-    formData.append("images", JSON.stringify(inputs.images));
+    // formData.append("images", JSON.stringify(inputs.images));
     formData.append("keywords", inputs.keywords);
     formData.append("meta_title", inputs.meta_title);
     formData.append("meta_desc", inputs.meta_desc);
+    formData.append("slug", inputs.slug);
 
     try {
       const resp = await publicRequest.put(`/products/${productId}`, formData, {
@@ -82,11 +83,12 @@ export default function AddProductAbout({
           ...prev,
           title: resp.data.title,
           about: resp.data.about,
-          images: resp.data.images,
+          // images: resp.data.images,
           sub_category_id: resp.data.sub_category_id,
           keywords: resp.data.keywords,
           meta_title: resp.data.meta_title,
           meta_desc: resp.data.meta_desc,
+          slug: resp.data.slug.split("-").join(" "),
         }));
       }
 
@@ -141,6 +143,27 @@ export default function AddProductAbout({
           </div>
         </div>
 
+        {/* slug */}
+        <div className="col-lg-6 mt-4">
+          <div className="inputGroup">
+            <input
+              required
+              type="text"
+              name="slug"
+              autoComplete="off"
+              className="createInput"
+              value={inputs?.slug}
+              onChange={(e) =>
+                setInputs((prev) => ({
+                  ...prev,
+                  [e.target.name]: e.target.value,
+                }))
+              }
+            />
+            <label className="user-label">Slug</label>
+          </div>
+        </div>
+
         {/* sub category */}
         <div className="col-lg-6 mt-4">
           <div className="inputGroup">
@@ -179,7 +202,6 @@ export default function AddProductAbout({
         <div className="col-lg-6 mt-4">
           <div className="inputGroup">
             <input
-              required
               type="file"
               name="text"
               multiple

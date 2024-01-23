@@ -24,8 +24,8 @@ export default function Page({ params: { id } }) {
     keywords: "",
     meta_title: "",
     meta_desc: "",
+    slug: "",
   });
-  console.log({ inputs });
   const [productId, setProductId] = useState(null);
 
   useEffect(() => {
@@ -33,7 +33,7 @@ export default function Page({ params: { id } }) {
       await publicRequest.get(`/products/${id}`).then((resp) => {
         setProductData(resp.data);
         setProductId(resp.data.id);
-        console.log(resp.data);
+        // console.log(resp.data);
       });
     })();
   }, [id]);
