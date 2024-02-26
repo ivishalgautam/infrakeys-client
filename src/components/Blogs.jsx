@@ -67,7 +67,7 @@ export default function Blogs() {
               className="mySwiper"
             >
               {blogs?.map((blog) => (
-                <div className="col-lg-3 col-sm-6">
+                <div className="col-lg-3 col-sm-6" key={blog.id}>
                   <SwiperSlide key={blog.id}>
                     <BlogCard blog={blog} handleBlogDelete={handleBlogDelete} />
                   </SwiperSlide>

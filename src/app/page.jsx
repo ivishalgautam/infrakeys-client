@@ -7,11 +7,11 @@ import React from "react";
 import Clientele from "./admin/Components/Clientele";
 
 export const metadata = {
-  title: "Best steel manufacturers in faridabad,Haryana-Infrakeys",
+  title: "Best Steel Manufacturers in India | Infrakeys",
   keywords:
-    "steel manufacturers in faridabad,steel fabricators nera me,industrial steel in faridabad,Steel supplier in India,scaffolding manufacturer in faridabad,TMT suppliers in faridabad,PEB manufacturers in India, PEB manufacturers in faridabad,steel supplier in faridabad,top steel manufacturers in faridabad,india,steel fabricators faridabad,steel manufacturers near me",
+    "steel manufacturers in india,steel fabricators near me,industrial steel in faridabad,Steel supplier in India,scaffolding manufacturer in faridabad,TMT suppliers in faridabad,PEB manufacturers in India, PEB manufacturers,steel supplier in faridabad, steel manufacturers,india,steel fabricators,steel manufacturers near me",
   description:
-    "Infrakeys best steel manufacturers in Faridabad, Haryana, providing high-quality Steel supplier, fabricators,TMT,PEB manufacturers in India at best price.",
+    "Infrakeys best steel manufacturers in India, providing high-quality Steel supplier, fabricators,TMT,PEB manufacturers in India at best price.",
   author: "Infrakeys",
   publisher: "Infrakeys",
 };

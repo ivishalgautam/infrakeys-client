@@ -13,7 +13,6 @@ export default function MainLayout({ children }) {
   const register = pathname.startsWith("/login");
   const login = pathname.startsWith("/register");
   const otpverify = pathname.startsWith("/otpverify");
-  console.log(pathname);
   return (
     <html lang="en">
       <body>
@@ -23,8 +22,6 @@ export default function MainLayout({ children }) {
         {!isAdminPage && !register && !login && !otpverify && <Footer />}
         <Toaster />
         <FloatingWhatsApp
-          phoneNumber="123456789"
-          accountName="Foo"
           notificationDelay={10}
           notification={true}
           notificationSound={true}
